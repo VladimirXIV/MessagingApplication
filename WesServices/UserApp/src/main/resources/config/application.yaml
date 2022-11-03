@@ -1,0 +1,31 @@
+server.port: 9090
+
+jpa:
+  properties:
+    hibernate:
+      formatSql: true
+      jdbc:
+        lob:
+          non-contextual-creation: true
+  databasePlatform: "org.hibernate.dialect.PostgreSQL9Dialect"
+  show-sql: false
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    password: 'password'
+    url: jdbc:h2:staging
+    username: SA
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    password: 'password'
+    url: jdbc:h2:staging
+    username: SA

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>just.education</groupId>
+    <artifactId>messaging-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <description>messaging-app</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <lombok.version>1.18.24</lombok.version>
+        <org.hibernate.version>3.2.0.ga</org.hibernate.version>
+        <org.postgresql.version>42.5.0</org.postgresql.version>
+        <javax.persistence.veresion>2.2</javax.persistence.veresion>
+        <flyway.version>9.6.0</flyway.version>
+        <spring-web.version>5.3.23</spring-web.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring-web.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${org.postgresql.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>${org.hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>${javax.persistence.veresion}</version>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>dev-environment</id>
+            <properties>
+                <database.driver>org.postgresql.Driver</database.driver>
+                <database.url>jdbc:postgresql://localhost:5454/users</database.url>
+                <database.user>db_root</database.user>
+                <database.password>db_root</database.password>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>test-environment</id>
+            <properties>
+                <database.driver>org.postgresql.Driver</database.driver>
+                <database.url>jdbc:postgresql://localhost:5454/users</database.url>
+                <database.user>root</database.user>
+                <database.password>root</database.password>
+                <flyway.location>classpath:/database/migration</flyway.location>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>preprod-environment</id>
+            <properties>
+                <database.driver>org.postgresql.Driver</database.driver>
+                <database.url>jdbc:postgresql://localhost:5454/users</database.url>
+                <database.user>root</database.user>
+                <database.password>root</database.password>
+                <flyway.location>classpath:/database/migration</flyway.location>
+            </properties>
+        </profile>
+
+    </profiles>
+
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <configuration>
+                    <driver>${database.driver}</driver>
+                    <url>${database.url}</url>
+                    <user>${database.user}</user>
+                    <password>${database.password}</password>
+                    <locations>
+                        <location>classpath:database/migration</location>
+                    </locations>
+                    <validateOnMigrate>true</validateOnMigrate>
+                    <defaultSchema>user_schema</defaultSchema>
+                    <table>USER_SCHEMA_HISTORY_TABLE</table>
+                    <sqlMigrationPrefix>M</sqlMigrationPrefix>
+                    <sqlMigrationSeparator>__</sqlMigrationSeparator>
+                    <sqlMigrationSuffixes>.sql</sqlMigrationSuffixes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
