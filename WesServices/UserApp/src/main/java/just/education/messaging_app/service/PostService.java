@@ -1,13 +1,12 @@
 package just.education.messaging_app.service;
 
+import just.education.messaging_app.model.Post;
 
-import just.education.messaging_app.model.User;
-
-public interface UserService {
+public interface PostService {
 
     public void create();
 
-    public User findById(final long id);
+    public Post findById(final long id);
 
     public void update();
 

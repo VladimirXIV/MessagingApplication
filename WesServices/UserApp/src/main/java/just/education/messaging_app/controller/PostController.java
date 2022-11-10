@@ -1,7 +1,7 @@
 package just.education.messaging_app.controller;
 
-import just.education.messaging_app.model.User;
-import just.education.messaging_app.service.UserService;
+import just.education.messaging_app.model.Post;
+import just.education.messaging_app.service.PostService;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,40 +15,39 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/post")
+public class PostController {
+
+    private PostService userPostService;
 
 
-    private UserService userService;
-
-
-    public UserController() {
+    public PostController() {
 
     }
 
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public PostController(PostService userPostService) {
+        this.userPostService = userPostService;
     }
 
 
     @PostMapping
-    public void createUser() {
+    public void createPost() {
 
     }
 
     @GetMapping(path = "/{id}")
-    public User findUserById(@PathVariable("id") final long id) {
-        return userService.findById(id);
+    public Post findUserPostById(@PathVariable("id") final long id) {
+        return userPostService.findById(id);
     }
 
     @PatchMapping
-    public void updateUser() {
+    public void updateUserPost() {
 
     }
 
     @DeleteMapping
-    public void deleteUserById(@PathVariable("id") final int id) {
+    public void deleteUserPostById(@PathVariable("id") final int id) {
 
     }
 }

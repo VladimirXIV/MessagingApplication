@@ -1,61 +1,60 @@
 package just.education.messaging_app.repository;
 
-import just.education.messaging_app.model.User;
+import just.education.messaging_app.model.Post;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-
-public class UserRepository {
+public class PostRepository {
 
     EntityManagerFactory entityManagerFactory;
 
 
-    public UserRepository() {
+    public PostRepository() {
     }
 
-    public UserRepository(EntityManagerFactory entityManagerFactory) {
+    public PostRepository(EntityManagerFactory entityManagerFactory) {
         this.entityManagerFactory = entityManagerFactory;
     }
 
 
-    public User create(User user) {
+    public Post create(Post post) {
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();
 
-        entityManager.persist(user);
+        entityManager.persist(post);
 
         entityManager.getTransaction().commit();
 
-        return user;
+        return post;
     }
 
-    public User retrieveById(Long id) {
+    public Post retrieveById(Long id) {
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();
 
-        User user = entityManager.find(User.class, id);
+        Post post = entityManager.find(Post.class, id);
 
         entityManager.getTransaction().commit();
 
-        return user;
+        return post;
     }
 
-    public User update(User user) {
+    public Post update(Post post) {
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();
 
-        entityManager.persist(user);
+        entityManager.persist(post);
 
         entityManager.getTransaction().commit();
 
-        return user;
+        return post;
     }
 
 
@@ -63,19 +62,19 @@ public class UserRepository {
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        User user = retrieveById(id);
-        this.delete(user);
+        Post post = retrieveById(id);
+        this.delete(post);
 
         entityManager.getTransaction().commit();
     }
 
-    private void delete(User user) {
+    private void delete(Post post) {
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();
 
-        entityManager.remove(user);
+        entityManager.remove(post);
 
         entityManager.getTransaction().commit();
     }
