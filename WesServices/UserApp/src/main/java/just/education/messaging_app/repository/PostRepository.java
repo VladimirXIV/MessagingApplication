@@ -1,13 +1,16 @@
 package just.education.messaging_app.repository;
 
-import just.education.messaging_app.model.Post;
+import just.education.messaging_app.entity.Post;
+import just.education.messaging_app.entity.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceException;
 
 public class PostRepository {
 
-    EntityManagerFactory entityManagerFactory;
+    private EntityManagerFactory entityManagerFactory;
 
 
     public PostRepository() {
@@ -18,28 +21,62 @@ public class PostRepository {
     }
 
 
-    public Post create(Post post) {
+    public Post create(Post post, long userId) {
 
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        entityManager.getTransaction().begin();
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
 
-        entityManager.persist(post);
+        try {
 
-        entityManager.getTransaction().commit();
+            entityTransaction.begin();
+
+            User user = entityManager.getReference(User.class, userId);
+
+            post.setUser(user);
+
+            entityManager.persist(post);
+
+        } catch (PersistenceException pEx) {
+
+            entityTransaction.rollback();
+
+            throw pEx;
+
+        } finally {
+
+            entityTransaction.commit();
+
+            entityManager.close();
+        }
 
         return post;
     }
 
     public Post retrieveById(Long id) {
 
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        entityManager.getTransaction().begin();
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
 
-        Post post = entityManager.find(Post.class, id);
+        Post post = null;
 
-        entityManager.getTransaction().commit();
+        try {
+
+            entityTransaction.begin();
+
+            post = entityManager.find(Post.class, id);
+
+        } finally {
+
+            if (post != null) {
+                entityTransaction.commit();
+            } else {
+                entityTransaction.rollback();
+            }
+
+            entityManager.close();
+        }
 
         return post;
     }
@@ -58,24 +95,34 @@ public class PostRepository {
     }
 
 
-    public void deleteById(Long id) {
+    public Post deleteById(Long id) {
 
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        Post post = retrieveById(id);
-        this.delete(post);
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
 
-        entityManager.getTransaction().commit();
-    }
+        Post post = null;
 
-    private void delete(Post post) {
+        try {
 
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+            entityTransaction.begin();
 
-        entityManager.getTransaction().begin();
+            post = entityManager.find(Post.class, id);
 
-        entityManager.remove(post);
+            entityManager.remove(post);
 
-        entityManager.getTransaction().commit();
+        } catch (PersistenceException pEx) {
+
+            entityTransaction.rollback();
+            throw pEx;
+
+        } finally {
+
+            entityTransaction.commit();
+
+            entityManager.close();
+        }
+
+        return post;
     }
 }

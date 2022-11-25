@@ -1,14 +1,19 @@
 package just.education.messaging_app.repository;
 
-import just.education.messaging_app.model.User;
+import just.education.messaging_app.entity.User;
 
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceException;
+import javax.persistence.EntityTransaction;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import java.util.Collection;
 
 
 public class UserRepository {
 
-    EntityManagerFactory entityManagerFactory;
+    private EntityManagerFactory entityManagerFactory;
 
 
     public UserRepository() {
@@ -21,62 +26,159 @@ public class UserRepository {
 
     public User create(User user) {
 
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        entityManager.getTransaction().begin();
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
 
-        entityManager.persist(user);
+        try {
 
-        entityManager.getTransaction().commit();
+            entityTransaction.begin();
+
+            entityManager.persist(user); // persist and set ID
+
+        } catch (PersistenceException pEx) {
+
+            entityTransaction.rollback();
+
+            throw pEx;
+
+        } finally {
+
+            entityTransaction.commit();
+
+            entityManager.close();
+        }
 
         return user;
     }
 
     public User retrieveById(Long id) {
 
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        entityManager.getTransaction().begin();
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
 
-        User user = entityManager.find(User.class, id);
+        User user = null;
 
-        entityManager.getTransaction().commit();
+        try {
+
+            entityTransaction.begin();
+
+            user = entityManager.find(User.class, id);
+
+        } finally {
+
+            if (user != null) {
+                entityTransaction.commit();
+            } else {
+                entityTransaction.rollback();
+            }
+
+            entityManager.close();
+        }
 
         return user;
     }
 
+    public Collection<User> retrieveAll() {
+
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
+
+        final Query query = entityManager.createQuery("select u from User u");
+
+        Collection<User> users = null;
+
+        try {
+
+            entityTransaction.begin();
+
+            users = query.getResultList();
+
+        } catch (PersistenceException pEx) {
+
+            entityTransaction.rollback();
+            throw pEx;
+
+        } finally {
+
+            if (users != null) {
+                entityTransaction.commit();
+            } else {
+                entityTransaction.rollback();
+            }
+
+            entityManager.close();
+        }
+
+        return users;
+    }
+
+    /**
+     * Update user by id {@link User#getId()} with non-null fields
+     *
+     * @param user user to update
+     * @return updated user
+     */
     public User update(User user) {
 
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        entityManager.getTransaction().begin();
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
 
-        entityManager.persist(user);
+        User persistedUser = null;
 
-        entityManager.getTransaction().commit();
+        try {
+
+            entityTransaction.begin();
+
+            persistedUser = entityManager.merge(user);
+
+        } catch (PersistenceException pEx) {
+
+            entityTransaction.rollback();
+            throw pEx;
+
+        } finally {
+
+            entityTransaction.commit();
+
+            entityManager.close();
+        }
+
+        return persistedUser;
+    }
+
+
+    public User deleteById(Long id) {
+
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
+
+        User user = null;
+
+        try {
+
+            entityTransaction.begin();
+
+            user = entityManager.find(User.class, id);
+
+            entityManager.remove(user);
+
+        } catch (PersistenceException pEx) {
+
+            entityTransaction.rollback();
+            throw pEx;
+
+        } finally {
+
+            entityTransaction.commit();
+
+            entityManager.close();
+        }
 
         return user;
-    }
-
-
-    public void deleteById(Long id) {
-
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-
-        User user = retrieveById(id);
-        this.delete(user);
-
-        entityManager.getTransaction().commit();
-    }
-
-    private void delete(User user) {
-
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-
-        entityManager.getTransaction().begin();
-
-        entityManager.remove(user);
-
-        entityManager.getTransaction().commit();
     }
 }

@@ -6,6 +6,9 @@ import just.education.messaging_app.service.UserService;
 import just.education.messaging_app.service.PostService;
 import just.education.messaging_app.serviceimpl.UserServiceImpl;
 import just.education.messaging_app.serviceimpl.PostServiceImpl;
+import just.education.messaging_app.mapper.UserMapper;
+
+import org.modelmapper.ModelMapper;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,6 +21,16 @@ import javax.persistence.EntityManagerFactory;
 public class AppConfig {
 
     @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+
+    @Bean
+    public UserMapper userMapper() {
+        return new UserMapper();
+    }
+
+    @Bean
     public UserRepository userRepository(EntityManagerFactory entityManagerFactory) {
         return new UserRepository(entityManagerFactory);
     }
@@ -28,12 +41,12 @@ public class AppConfig {
     }
 
     @Bean
-    public UserService userService(UserRepository userRepository) {
-        return new UserServiceImpl(userRepository);
+    public UserService userService(UserRepository userRepository, UserMapper userMapper) {
+        return new UserServiceImpl(userRepository, userMapper);
     }
 
     @Bean
-    public PostService userPostService(PostRepository userPostRepository) {
-        return new PostServiceImpl(userPostRepository);
+    public PostService userPostService(PostRepository userPostRepository, ModelMapper modelMapper) {
+        return new PostServiceImpl(userPostRepository, modelMapper);
     }
 }

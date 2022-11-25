@@ -11,11 +11,11 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Entity classes -->
-        <class>just.education.messaging_app.model.User</class>
-        <class>just.education.messaging_app.model.Follower</class>
-        <class>just.education.messaging_app.model.Friend</class>
-        <class>just.education.messaging_app.model.Message</class>
-        <class>just.education.messaging_app.model.Post</class>
+        <class>just.education.messaging_app.entity.User</class>
+        <class>just.education.messaging_app.entity.Post</class>
+        <class>just.education.messaging_app.entity.Follower</class>
+        <class>just.education.messaging_app.entity.Friend</class>
+        <class>just.education.messaging_app.entity.Message</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />

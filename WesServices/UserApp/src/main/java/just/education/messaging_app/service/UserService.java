@@ -1,15 +1,20 @@
 package just.education.messaging_app.service;
 
+import just.education.messaging_app.dto.UserReadDto;
+import just.education.messaging_app.dto.UserCreateDto;
+import just.education.messaging_app.dto.UserUpdateDto;
 
-import just.education.messaging_app.model.User;
+import java.util.Collection;
 
 public interface UserService {
 
-    public void create();
+    public UserReadDto create(UserCreateDto userCreateDto);
 
-    public User findById(final long id);
+    public UserReadDto findById(final long id);
 
-    public void update();
+    public Collection<UserReadDto> findAll();
 
-    public void delete(final int id);
+    public UserReadDto updateById(long id, UserUpdateDto userUpdateDto);
+
+    public UserReadDto deleteById(final long id);
 }
