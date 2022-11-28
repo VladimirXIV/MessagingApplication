@@ -3,10 +3,14 @@ package just.education.messaging_app.repository;
 import just.education.messaging_app.entity.Post;
 import just.education.messaging_app.entity.User;
 
+import javax.persistence.Query;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceException;
+
+import java.util.List;
+
 
 public class PostRepository {
 
@@ -81,15 +85,66 @@ public class PostRepository {
         return post;
     }
 
+    public List<Post> retrieveByUserId(Long id) {
+
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
+
+        final Query query = entityManager.createQuery("select p from Post p where p.user.id = :id");
+        query.setParameter("id", id);
+
+        List<Post> posts = null;
+
+        try {
+
+            entityTransaction.begin();
+
+            posts = query.getResultList();
+
+        } catch (PersistenceException pEx) {
+
+            entityTransaction.rollback();
+            throw pEx;
+
+        } finally {
+
+            if (posts != null) {
+                entityTransaction.commit();
+            } else {
+                entityTransaction.rollback();
+            }
+
+            entityManager.close();
+        }
+
+        return posts;
+    }
+
     public Post update(Post post) {
 
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        entityManager.getTransaction().begin();
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
 
-        entityManager.persist(post);
+        try {
 
-        entityManager.getTransaction().commit();
+            entityTransaction.begin();
+
+            entityManager.merge(post);
+
+        } catch (PersistenceException pEx) {
+
+            entityTransaction.rollback();
+
+            throw pEx;
+
+        } finally {
+
+            entityTransaction.commit();
+
+            entityManager.close();
+        }
 
         return post;
     }

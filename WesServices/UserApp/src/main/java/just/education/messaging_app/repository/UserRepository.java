@@ -2,13 +2,13 @@ package just.education.messaging_app.repository;
 
 import just.education.messaging_app.entity.User;
 
+import javax.persistence.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceException;
-import javax.persistence.EntityTransaction;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
-import java.util.Collection;
+import java.util.List;
 
 
 public class UserRepository {
@@ -80,7 +80,7 @@ public class UserRepository {
         return user;
     }
 
-    public Collection<User> retrieveAll() {
+    public List<User> retrieveAll() {
 
         final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
@@ -88,7 +88,7 @@ public class UserRepository {
 
         final Query query = entityManager.createQuery("select u from User u");
 
-        Collection<User> users = null;
+        List<User> users = null;
 
         try {
 

@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class PostCreateDto {
 
-    private String senderId;
+    private Long senderId;
 
     private String message;
 }

@@ -1,0 +1,50 @@
+POST  http://localhost:9090/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstName": "Stanley",
+  "middleName": "Martin",
+  "lastName": "Lieber",
+  "username": "Stan Lee",
+  "mobile": "+7 800 5000 200",
+  "email": "stanleyml@inbox.com",
+  "intro": "Everything has beauty, but not everyone sees it.",
+  "profileInfo": "An American comic book writer, editor, publisher, and producer"
+}
+
+###
+POST http://localhost:9090/user/104/posts
+Accept: application/json
+Content-Type: application/json
+
+{
+  "senderId": 9890,
+  "message": "Guten Morgen liebe Sorgen!"
+}
+
+###
+GET http://localhost:9090/users/104
+Accept: application/json
+
+###
+GET http://localhost:9090/users/102/posts
+Accept: application/json
+
+###
+GET http://localhost:9090/users
+Accept: application/json
+
+###
+PUT http://localhost:9090/users/102
+Accept: application/json
+Content-Type: application/json
+
+{
+  "middleName": "Parker",
+  "lastName": "Robertson",
+  "username": "Uncle Ben",
+  "mobile": "+7 800 5000 500",
+  "email": "cliffordpr@gmail.com",
+  "profileInfo": "American actor"
+}

@@ -33,7 +33,7 @@
         <spring-web.version>5.3.23</spring-web.version>
 
         <lombok.version>1.18.24</lombok.version>
-        <modelmapper.version>2.4.5</modelmapper.version>
+        <modelmapper.version>3.1.0</modelmapper.version>
         <hibernate.version>5.6.11.Final</hibernate.version>
         <org.postgresql.version>42.5.0</org.postgresql.version>
         <org.flyway.version>9.7.0</org.flyway.version>

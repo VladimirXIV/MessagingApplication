@@ -1,19 +1,21 @@
 package just.education.messaging_app.controller;
 
 import just.education.messaging_app.dto.PostReadDto;
+import just.education.messaging_app.dto.PostUpdateDto;
 import just.education.messaging_app.service.PostService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 
 @RestController
-@RequestMapping("/post")
+@RequestMapping("/posts")
 public class PostController {
 
     private PostService userPostService;
@@ -30,13 +32,13 @@ public class PostController {
 
 
     @GetMapping(path = "/{id}")
-    public PostReadDto findUserPostById(@PathVariable("id") final long id) {
+    public PostReadDto findPostById(@PathVariable("id") final long id) {
         return userPostService.findById(id);
     }
 
-    @PatchMapping
-    public void updateUserPost() {
-
+    @PutMapping(path = "/{id}")
+    public PostReadDto updateUserPost(@PathVariable final long id, @RequestBody PostUpdateDto postUpdateDto) {
+        return userPostService.updateById(id, postUpdateDto);
     }
 
     @DeleteMapping(path = "/{id}")

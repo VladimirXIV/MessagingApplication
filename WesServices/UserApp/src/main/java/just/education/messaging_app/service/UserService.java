@@ -4,7 +4,7 @@ import just.education.messaging_app.dto.UserReadDto;
 import just.education.messaging_app.dto.UserCreateDto;
 import just.education.messaging_app.dto.UserUpdateDto;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface UserService {
 
@@ -12,7 +12,7 @@ public interface UserService {
 
     public UserReadDto findById(final long id);
 
-    public Collection<UserReadDto> findAll();
+    public List<UserReadDto> findAll();
 
     public UserReadDto updateById(long id, UserUpdateDto userUpdateDto);
 

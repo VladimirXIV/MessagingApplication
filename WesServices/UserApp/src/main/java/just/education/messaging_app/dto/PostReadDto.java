@@ -15,7 +15,7 @@ public class PostReadDto {
 
     private Long id;
 
-    private String senderId;
+    private Long senderId;
 
     private String message;
 

@@ -8,7 +8,6 @@ import just.education.messaging_app.dto.PostCreateDto;
 import just.education.messaging_app.service.UserService;
 import just.education.messaging_app.service.PostService;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,16 +16,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Collection;
+import java.util.List;
 
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
     private UserService userService;
     private PostService postService;
+
 
     public UserController() {
 
@@ -46,7 +47,7 @@ public class UserController {
 
     @PostMapping(path = "/{id}/posts")
     public PostReadDto createPost(@PathVariable final long id, @RequestBody PostCreateDto postCreateDto) {
-        return postService.create(postCreateDto, id);
+        return postService.create(id, postCreateDto);
     }
 
     @GetMapping(path = "/{id}")
@@ -54,8 +55,13 @@ public class UserController {
         return userService.findById(id);
     }
 
-    @GetMapping(path = "/all")
-    public Collection<UserReadDto> findAll() {
+    @GetMapping(path = "/{id}/posts")
+    public List<PostReadDto> findPostsByUser(@PathVariable("id") final long id) {
+        return postService.findPostsByUser(id);
+    }
+
+    @GetMapping
+    public List<UserReadDto> findAllUsers() {
         return userService.findAll();
     }
 

@@ -1,34 +1,37 @@
 package just.education.messaging_app.serviceimpl;
 
+import just.education.messaging_app.dto.PostUpdateDto;
 import just.education.messaging_app.entity.Post;
 import just.education.messaging_app.dto.PostReadDto;
 import just.education.messaging_app.dto.PostCreateDto;
+import just.education.messaging_app.mapper.PostMapper;
 import just.education.messaging_app.repository.PostRepository;
 import just.education.messaging_app.service.PostService;
-import org.modelmapper.ModelMapper;
 
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.List;
+
 
 public class PostServiceImpl implements PostService {
 
     private PostRepository postRepository;
-    private ModelMapper modelMapper;
+    private PostMapper postMapper;
 
 
     public PostServiceImpl() {
 
     }
 
-    public PostServiceImpl(PostRepository postRepository, ModelMapper modelMapper) {
+    public PostServiceImpl(PostRepository postRepository, PostMapper postMapper) {
         this.postRepository = postRepository;
-        this.modelMapper = modelMapper;
+        this.postMapper = postMapper;
     }
 
 
-    public PostReadDto create(PostCreateDto postCreateDto, long userId) {
+    public PostReadDto create(final long userId, PostCreateDto postCreateDto) {
 
-        final Post newPost = modelMapper.map(postCreateDto, Post.class);
+        final Post newPost = postMapper.toPost(postCreateDto);
 
         final Timestamp createdAt = Timestamp.from(Instant.now());
 
@@ -37,24 +40,38 @@ public class PostServiceImpl implements PostService {
 
         final Post createdPost = postRepository.create(newPost, userId);
 
-        return modelMapper.map(createdPost, PostReadDto.class);
+        return postMapper.toPostReadDto(createdPost);
     }
 
-    public PostReadDto findById(long id) {
+    public PostReadDto findById(final long id) {
 
         final Post post = postRepository.retrieveById(id);
 
-        return modelMapper.map(post, PostReadDto.class);
+        return postMapper.toPostReadDto(post);
     }
 
-    public void update() {
+    public List<PostReadDto> findPostsByUser(final long id) {
 
+        final List<Post> posts = postRepository.retrieveByUserId(id);
+
+        return postMapper.toPostReadDtoList(posts);
     }
 
-    public PostReadDto deleteById(long id) {
+    public PostReadDto updateById(final long id, PostUpdateDto postUpdateDto) {
+
+        final Post currentPost = postRepository.retrieveById(id);
+
+        postMapper.toPostNonNullFields(postUpdateDto, currentPost);
+
+        final Post updatedPost = postRepository.update(currentPost);
+
+        return postMapper.toPostReadDto(updatedPost);
+    }
+
+    public PostReadDto deleteById(final long id) {
 
         final Post post = postRepository.deleteById(id);
 
-        return modelMapper.map(post, PostReadDto.class);
+        return postMapper.toPostReadDto(post);
     }
 }

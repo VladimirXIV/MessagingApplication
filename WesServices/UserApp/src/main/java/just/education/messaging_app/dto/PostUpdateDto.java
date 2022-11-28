@@ -5,7 +5,6 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
-import java.sql.Timestamp;
 
 @Setter
 @Getter
@@ -13,13 +12,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class PostUpdateDto {
 
-    private Long id;
-
-    private String senderId;
+    private Long senderId;
 
     private String message;
-
-    private Timestamp createdAt;
-
-    private Timestamp updatedAt;
 }

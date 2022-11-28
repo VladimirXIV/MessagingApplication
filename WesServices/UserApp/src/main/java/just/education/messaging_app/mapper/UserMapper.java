@@ -1,16 +1,17 @@
 package just.education.messaging_app.mapper;
 
+import just.education.messaging_app.entity.User;
 import just.education.messaging_app.dto.UserCreateDto;
 import just.education.messaging_app.dto.UserUpdateDto;
 import just.education.messaging_app.dto.UserReadDto;
-import just.education.messaging_app.entity.User;
 
+import org.modelmapper.Conditions;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class UserMapper {
@@ -34,7 +35,8 @@ public class UserMapper {
                         map().setMobile(source.getMobile());
                         map().setEmail(source.getEmail());
                         map().setIntro(source.getIntro());
-                        map().setProfileInfo(source.getProfileInfo());}
+                        map().setProfileInfo(source.getProfileInfo());
+                    }
                 });
 
         mapper.createTypeMap(UserUpdateDto.class, User.class, "userUpdateDtoToUser")
@@ -59,37 +61,14 @@ public class UserMapper {
                     @Override
                     protected void configure() {
 
-                        if (source.getFirstName() != null) {
-                            map().setFirstName(source.getFirstName());
-                        }
-
-                        if (source.getMiddleName() != null) {
-                            map().setMiddleName(source.getMiddleName());
-                        }
-
-                        if (source.getLastName() != null) {
-                            map().setLastName(source.getLastName());
-                        }
-
-                        if (source.getUsername() != null) {
-                            map().setUsername(source.getUsername());
-                        }
-
-                        if (source.getMobile() != null) {
-                            map().setMobile(source.getMobile());
-                        }
-
-                        if (source.getEmail() != null) {
-                            map().setEmail(source.getEmail());
-                        }
-
-                        if (source.getIntro() != null) {
-                            map().setIntro(source.getIntro());
-                        }
-
-                        if (source.getProfileInfo() != null) {
-                            map().setProfileInfo(source.getProfileInfo());
-                        }
+                        when(Conditions.isNull()).skip().setFirstName(source.getFirstName());
+                        when(Conditions.isNull()).skip().setMiddleName(source.getMiddleName());
+                        when(Conditions.isNull()).skip().setLastName(source.getLastName());
+                        when(Conditions.isNull()).skip().setUsername(source.getUsername());
+                        when(Conditions.isNull()).skip().setMobile(source.getMobile());
+                        when(Conditions.isNull()).skip().setEmail(source.getEmail());
+                        when(Conditions.isNull()).skip().setIntro(source.getIntro());
+                        when(Conditions.isNull()).skip().setProfileInfo(source.getProfileInfo());
                     }
                 });
 
@@ -112,6 +91,7 @@ public class UserMapper {
                         map().setProfileInfo(source.getProfileInfo());
                     }
                 });
+
     }
 
     public User toUser(UserCreateDto userCreateDto) {
@@ -122,17 +102,17 @@ public class UserMapper {
         return mapper.map(userUpdateDto, User.class, "userUpdateDtoToUser");
     }
 
-    public User toUserNonNullFields(UserUpdateDto userUpdateDto) {
-        return mapper.map(userUpdateDto, User.class, "userUpdateDtoNotNullFieldsToUser");
+    public void toUserNonNullFields(UserUpdateDto userUpdateDto, User user) {
+        mapper.map(userUpdateDto, user, "userUpdateDtoNotNullFieldsToUser");
     }
 
     public UserReadDto toUserReadDto(User user) {
         return mapper.map(user, UserReadDto.class, "userToUserReadDto");
     }
 
-    public Set<UserReadDto> toUserReadDtoSet(Collection<User> users) {
+    public List<UserReadDto> toUserReadDtoList(Collection<User> users) {
 
-        Set<UserReadDto> userReadDtoSet = new HashSet<>();
+        List<UserReadDto> userReadDtoSet = new ArrayList<>();
 
         for (User user : users) {
             userReadDtoSet.add(this.toUserReadDto(user));

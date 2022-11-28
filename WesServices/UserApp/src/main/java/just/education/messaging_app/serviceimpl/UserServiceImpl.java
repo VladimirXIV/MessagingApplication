@@ -10,7 +10,7 @@ import just.education.messaging_app.mapper.UserMapper;
 
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.Collection;
+import java.util.List;
 
 
 public class UserServiceImpl implements UserService {
@@ -42,34 +42,34 @@ public class UserServiceImpl implements UserService {
         return userMapper.toUserReadDto(createdUser);
     }
 
-    public UserReadDto findById(long id) {
+    public UserReadDto findById(final long id) {
 
         final User user = userRepository.retrieveById(id);
 
         return userMapper.toUserReadDto(user);
     }
 
-    public Collection<UserReadDto> findAll() {
+    public List<UserReadDto> findAll() {
 
-        final Collection<User> users = userRepository.retrieveAll();
+        final List<User> users = userRepository.retrieveAll();
 
-        return userMapper.toUserReadDtoSet(users);
+        return userMapper.toUserReadDtoList(users);
     }
 
-    public UserReadDto updateById(long id, UserUpdateDto userUpdateDto) {
+    public UserReadDto updateById(final long id, UserUpdateDto userUpdateDto) {
 
         final User currentUser = userRepository.retrieveById(id);
 
-        userMapper.toUserNonNullFields(userUpdateDto); // map only NON-NULL fields
+        userMapper.toUserNonNullFields(userUpdateDto, currentUser); // map only NON-NULL fields
 
         final User updatedUser = userRepository.update(currentUser);
 
         return userMapper.toUserReadDto(updatedUser);
     }
 
-    public UserReadDto deleteById(long id) {
+    public UserReadDto deleteById(final long id) {
 
-        User user = userRepository.deleteById(id);
+        final User user = userRepository.deleteById(id);
 
         return userMapper.toUserReadDto(user);
     }
