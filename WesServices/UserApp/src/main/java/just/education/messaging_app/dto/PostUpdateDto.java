@@ -12,7 +12,5 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class PostUpdateDto {
 
-    private Long senderId;
-
-    private String message;
+    private String text;
 }

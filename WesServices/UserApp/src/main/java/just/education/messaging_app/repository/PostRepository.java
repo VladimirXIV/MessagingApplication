@@ -25,7 +25,7 @@ public class PostRepository {
     }
 
 
-    public Post create(Post post, long userId) {
+    public Post create(long senderId, long receiverId, Post post) {
 
         final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
@@ -35,9 +35,11 @@ public class PostRepository {
 
             entityTransaction.begin();
 
-            User user = entityManager.getReference(User.class, userId);
+            User sender = entityManager.getReference(User.class, senderId);
+            User receiver = entityManager.getReference(User.class, receiverId);
 
-            post.setUser(user);
+            post.setSender(sender);
+            post.setReceiver(receiver);
 
             entityManager.persist(post);
 
@@ -85,13 +87,49 @@ public class PostRepository {
         return post;
     }
 
-    public List<Post> retrieveByUserId(Long id) {
+    public List<Post> retrieveByReceiverId(Long id) {
 
         final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         final EntityTransaction entityTransaction = entityManager.getTransaction();
 
-        final Query query = entityManager.createQuery("select p from Post p where p.user.id = :id");
+        final Query query = entityManager.createQuery("select p from Post p where p.receiver.id = :id");
+        query.setParameter("id", id);
+
+        List<Post> posts = null;
+
+        try {
+
+            entityTransaction.begin();
+
+            posts = query.getResultList();
+
+        } catch (PersistenceException pEx) {
+
+            entityTransaction.rollback();
+            throw pEx;
+
+        } finally {
+
+            if (posts != null) {
+                entityTransaction.commit();
+            } else {
+                entityTransaction.rollback();
+            }
+
+            entityManager.close();
+        }
+
+        return posts;
+    }
+
+    public List<Post> retrieveBySenderId(Long id) {
+
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
+
+        final Query query = entityManager.createQuery("select p from Post p where p.sender.id = :id");
         query.setParameter("id", id);
 
         List<Post> posts = null;
@@ -148,7 +186,6 @@ public class PostRepository {
 
         return post;
     }
-
 
     public Post deleteById(Long id) {
 

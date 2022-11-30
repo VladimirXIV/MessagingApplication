@@ -5,20 +5,16 @@ import just.education.messaging_app.dto.PostUpdateDto;
 import just.education.messaging_app.service.PostService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
 @RequestMapping("/posts")
 public class PostController {
 
-    private PostService userPostService;
+    private PostService postService;
 
 
     public PostController() {
@@ -26,23 +22,33 @@ public class PostController {
     }
 
     @Autowired
-    public PostController(PostService userPostService) {
-        this.userPostService = userPostService;
+    public PostController(PostService postService) {
+        this.postService = postService;
     }
 
 
     @GetMapping(path = "/{id}")
     public PostReadDto findPostById(@PathVariable("id") final long id) {
-        return userPostService.findById(id);
+        return postService.findById(id);
+    }
+
+    @GetMapping(path = "/posts")
+    public List<PostReadDto> findPostsBySender(@RequestParam("senderId") final long id) {
+        return postService.findPostsBySenderId(id);
+    }
+
+    @GetMapping(path = "/posts")
+    public List<PostReadDto> findPostsByReceiver(@RequestParam("receiverId") final long id) {
+        return postService.findPostsByReceiverId(id);
     }
 
     @PutMapping(path = "/{id}")
-    public PostReadDto updateUserPost(@PathVariable final long id, @RequestBody PostUpdateDto postUpdateDto) {
-        return userPostService.updateById(id, postUpdateDto);
+    public PostReadDto updatePost(@PathVariable final long id, @RequestBody PostUpdateDto postUpdateDto) {
+        return postService.updateById(id, postUpdateDto);
     }
 
     @DeleteMapping(path = "/{id}")
-    public PostReadDto deleteUserPostById(@PathVariable("id") final int id) {
-        return userPostService.deleteById(id);
+    public PostReadDto deletePostById(@PathVariable("id") final int id) {
+        return postService.deleteById(id);
     }
 }

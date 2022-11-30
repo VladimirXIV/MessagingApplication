@@ -5,8 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.GeneratedValue;
+import javax.persistence.SequenceGenerator;
+
 import java.sql.Timestamp;
+import java.util.Objects;
+
 
 @Getter
 @Setter
@@ -21,18 +32,33 @@ public class Message {
     @SequenceGenerator(name = "message_id_seq", sequenceName = "message_id_sequence")
     private Long id;
 
-    @Column(name = "source_id")
-    private String sourceId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "sender_id", table = "post", referencedColumnName = "id")
+    private User sender;
 
-    @Column(name = "target_id")
-    private String targetId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "receiver_id", table = "post", referencedColumnName = "id")
+    private User receiver;
 
-    @Column(name = "message")
-    private String message;
+    @Column(name = "text")
+    private String text;
 
     @Column(name = "created_at")
     private Timestamp createdAt;
 
     @Column(name = "updated_at")
     private Timestamp updatedAt;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Message message = (Message) o;
+        return id.equals(message.id) && Objects.equals(sender, message.sender) && Objects.equals(receiver, message.receiver) && Objects.equals(text, message.text) && createdAt.equals(message.createdAt) && updatedAt.equals(message.updatedAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, sender, receiver, text, createdAt, updatedAt);
+    }
 }

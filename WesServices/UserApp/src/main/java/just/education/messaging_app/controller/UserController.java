@@ -3,13 +3,17 @@ package just.education.messaging_app.controller;
 import just.education.messaging_app.dto.UserReadDto;
 import just.education.messaging_app.dto.UserCreateDto;
 import just.education.messaging_app.dto.UserUpdateDto;
+import just.education.messaging_app.dto.MessageCreateDto;
+import just.education.messaging_app.dto.MessageReadDto;
 import just.education.messaging_app.dto.PostReadDto;
 import just.education.messaging_app.dto.PostCreateDto;
 import just.education.messaging_app.service.UserService;
 import just.education.messaging_app.service.PostService;
+import just.education.messaging_app.service.MessageService;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,16 +31,17 @@ public class UserController {
 
     private UserService userService;
     private PostService postService;
-
+    private MessageService messageService;
 
     public UserController() {
 
     }
 
     @Autowired
-    public UserController(UserService userService, PostService postService) {
+    public UserController(UserService userService, PostService postService, MessageService messageService) {
         this.userService = userService;
         this.postService = postService;
+        this.messageService = messageService;
     }
 
 
@@ -45,19 +50,19 @@ public class UserController {
         return userService.create(userCreateDto);
     }
 
-    @PostMapping(path = "/{id}/posts")
+    @PostMapping(path = "/{id}/post")
     public PostReadDto createPost(@PathVariable final long id, @RequestBody PostCreateDto postCreateDto) {
         return postService.create(id, postCreateDto);
+    }
+
+    @PostMapping(path = "/{id}/message")
+    public MessageReadDto createMessage(@PathVariable final long id, @RequestBody MessageCreateDto messageCreateDto) {
+        return messageService.create(id, messageCreateDto);
     }
 
     @GetMapping(path = "/{id}")
     public UserReadDto findUserById(@PathVariable("id") final long id) {
         return userService.findById(id);
-    }
-
-    @GetMapping(path = "/{id}/posts")
-    public List<PostReadDto> findPostsByUser(@PathVariable("id") final long id) {
-        return postService.findPostsByUser(id);
     }
 
     @GetMapping

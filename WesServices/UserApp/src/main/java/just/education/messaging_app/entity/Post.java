@@ -5,10 +5,20 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.GenerationType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.SequenceGenerator;
 
 import java.sql.Timestamp;
 import java.util.Objects;
+
 
 @Getter
 @Setter
@@ -23,15 +33,16 @@ public class Post {
     @SequenceGenerator(name = "post_id_seq",  sequenceName = "post_id_sequence", schema = "user_schema", allocationSize = 1)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", table = "post", referencedColumnName = "id")
-    private User user;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "sender_id", table = "post", referencedColumnName = "id")
+    private User sender;
 
-    @Column(name = "sender_id")
-    private Long senderId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "receiver_id", table = "post", referencedColumnName = "id")
+    private User receiver;
 
-    @Column(name = "message")
-    private String message;
+    @Column(name = "text")
+    private String text;
 
     @Column(name = "created_at")
     private Timestamp createdAt;
@@ -44,11 +55,11 @@ public class Post {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
-        return Objects.equals(id, post.id) && Objects.equals(user, post.user) && Objects.equals(senderId, post.senderId) && Objects.equals(message, post.message) && Objects.equals(createdAt, post.createdAt) && Objects.equals(updatedAt, post.updatedAt);
+        return id.equals(post.id) && Objects.equals(sender, post.sender) && Objects.equals(receiver, post.receiver) && Objects.equals(text, post.text) && Objects.equals(createdAt, post.createdAt) && Objects.equals(updatedAt, post.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, user, senderId, message, createdAt, updatedAt);
+        return Objects.hash(id, sender, receiver, text, createdAt, updatedAt);
     }
 }

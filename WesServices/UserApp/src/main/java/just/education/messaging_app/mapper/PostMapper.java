@@ -32,8 +32,7 @@ public class PostMapper {
                     @Override
                     protected void configure() {
 
-                        map().setSenderId(source.getSenderId());
-                        map().setMessage(source.getMessage());
+                        map().setText(source.getText());
                     }
                 });
 
@@ -43,8 +42,7 @@ public class PostMapper {
                     @Override
                     protected void configure() {
 
-                        when(Conditions.isNull()).skip().setSenderId(source.getSenderId());
-                        when(Conditions.isNull()).skip().setMessage(source.getMessage());
+                        when(Conditions.isNull()).skip().setText(source.getText());
                     }
                 });
 
@@ -55,8 +53,9 @@ public class PostMapper {
                     protected void configure() {
 
                         map().setId(source.getId());
-                        map().setSenderId(source.getSenderId());
-                        map().setMessage(source.getMessage());
+                        map().setSenderId(source.getSender().getId());
+                        map().setReceiverId(source.getReceiver().getId());
+                        map().setText(source.getText());
                         map().setCreatedAt(source.getCreatedAt());
                         map().setUpdatedAt(source.getUpdatedAt());
                     }
@@ -79,8 +78,11 @@ public class PostMapper {
 
         List<PostReadDto> postReadDtoList = new ArrayList<>();
 
-        for (Post post : posts) {
-            postReadDtoList.add(this.toPostReadDto(post));
+        if (posts != null) {
+
+            for (Post post : posts) {
+                postReadDtoList.add(this.toPostReadDto(post));
+            }
         }
 
         return postReadDtoList;

@@ -5,13 +5,14 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
+
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class PostCreateDto {
 
-    private Long senderId;
+    private Long receiverId;
 
-    private String message;
+    private String text;
 }

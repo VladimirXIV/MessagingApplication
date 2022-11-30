@@ -1,12 +1,12 @@
 package just.education.messaging_app.serviceimpl;
 
-import just.education.messaging_app.dto.PostUpdateDto;
 import just.education.messaging_app.entity.Post;
 import just.education.messaging_app.dto.PostReadDto;
 import just.education.messaging_app.dto.PostCreateDto;
+import just.education.messaging_app.dto.PostUpdateDto;
 import just.education.messaging_app.mapper.PostMapper;
-import just.education.messaging_app.repository.PostRepository;
 import just.education.messaging_app.service.PostService;
+import just.education.messaging_app.repository.PostRepository;
 
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -29,7 +29,9 @@ public class PostServiceImpl implements PostService {
     }
 
 
-    public PostReadDto create(final long userId, PostCreateDto postCreateDto) {
+    public PostReadDto create(final long senderId, PostCreateDto postCreateDto) {
+
+        final long receiverId = postCreateDto.getReceiverId();
 
         final Post newPost = postMapper.toPost(postCreateDto);
 
@@ -38,7 +40,7 @@ public class PostServiceImpl implements PostService {
         newPost.setCreatedAt(createdAt);
         newPost.setUpdatedAt(createdAt);
 
-        final Post createdPost = postRepository.create(newPost, userId);
+        final Post createdPost = postRepository.create(senderId, receiverId, newPost);
 
         return postMapper.toPostReadDto(createdPost);
     }
@@ -50,9 +52,16 @@ public class PostServiceImpl implements PostService {
         return postMapper.toPostReadDto(post);
     }
 
-    public List<PostReadDto> findPostsByUser(final long id) {
+    public List<PostReadDto> findPostsBySenderId(final long id) {
 
-        final List<Post> posts = postRepository.retrieveByUserId(id);
+        final List<Post> posts = postRepository.retrieveBySenderId(id);
+
+        return postMapper.toPostReadDtoList(posts);
+    }
+
+    public List<PostReadDto> findPostsByReceiverId(final long id) {
+
+        final List<Post> posts = postRepository.retrieveByReceiverId(id);
 
         return postMapper.toPostReadDtoList(posts);
     }
@@ -62,6 +71,9 @@ public class PostServiceImpl implements PostService {
         final Post currentPost = postRepository.retrieveById(id);
 
         postMapper.toPostNonNullFields(postUpdateDto, currentPost);
+
+        final Timestamp updatedAt = Timestamp.from(Instant.now());
+        currentPost.setUpdatedAt(updatedAt);
 
         final Post updatedPost = postRepository.update(currentPost);
 

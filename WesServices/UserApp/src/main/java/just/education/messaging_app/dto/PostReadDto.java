@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 
 import java.sql.Timestamp;
 
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -17,7 +18,9 @@ public class PostReadDto {
 
     private Long senderId;
 
-    private String message;
+    private Long receiverId;
+
+    private String text;
 
     private Timestamp createdAt;
 

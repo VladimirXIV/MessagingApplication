@@ -114,8 +114,11 @@ public class UserMapper {
 
         List<UserReadDto> userReadDtoSet = new ArrayList<>();
 
-        for (User user : users) {
-            userReadDtoSet.add(this.toUserReadDto(user));
+        if (users != null) {
+
+            for (User user : users) {
+                userReadDtoSet.add(this.toUserReadDto(user));
+            }
         }
 
         return userReadDtoSet;
