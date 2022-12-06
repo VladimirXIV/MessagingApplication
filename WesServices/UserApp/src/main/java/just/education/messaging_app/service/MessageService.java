@@ -13,10 +13,6 @@ public interface MessageService {
 
     public MessageReadDto findById(final long id);
 
-    public List<MessageReadDto> findMessagesBySenderId(final long id);
-
-    public List<MessageReadDto> findMessagesByReceiverId(final long id);
-
     public MessageReadDto updateById(final long id, MessageUpdateDto messageUpdateDto);
 
     public MessageReadDto deleteById(final long id);

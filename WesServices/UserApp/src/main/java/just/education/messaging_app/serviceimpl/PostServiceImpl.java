@@ -10,7 +10,6 @@ import just.education.messaging_app.repository.PostRepository;
 
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.List;
 
 
 public class PostServiceImpl implements PostService {
@@ -29,6 +28,7 @@ public class PostServiceImpl implements PostService {
     }
 
 
+    @Override
     public PostReadDto create(final long senderId, PostCreateDto postCreateDto) {
 
         final long receiverId = postCreateDto.getReceiverId();
@@ -45,6 +45,7 @@ public class PostServiceImpl implements PostService {
         return postMapper.toPostReadDto(createdPost);
     }
 
+    @Override
     public PostReadDto findById(final long id) {
 
         final Post post = postRepository.retrieveById(id);
@@ -52,20 +53,7 @@ public class PostServiceImpl implements PostService {
         return postMapper.toPostReadDto(post);
     }
 
-    public List<PostReadDto> findPostsBySenderId(final long id) {
-
-        final List<Post> posts = postRepository.retrieveBySenderId(id);
-
-        return postMapper.toPostReadDtoList(posts);
-    }
-
-    public List<PostReadDto> findPostsByReceiverId(final long id) {
-
-        final List<Post> posts = postRepository.retrieveByReceiverId(id);
-
-        return postMapper.toPostReadDtoList(posts);
-    }
-
+    @Override
     public PostReadDto updateById(final long id, PostUpdateDto postUpdateDto) {
 
         final Post currentPost = postRepository.retrieveById(id);
@@ -80,6 +68,7 @@ public class PostServiceImpl implements PostService {
         return postMapper.toPostReadDto(updatedPost);
     }
 
+    @Override
     public PostReadDto deleteById(final long id) {
 
         final Post post = postRepository.deleteById(id);

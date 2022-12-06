@@ -13,10 +13,6 @@ public interface PostService {
 
     public PostReadDto findById(final long id);
 
-    public List<PostReadDto> findPostsBySenderId(final long id);
-
-    public List<PostReadDto> findPostsByReceiverId(final long id);
-
     public PostReadDto updateById(final long id, PostUpdateDto postUpdateDto);
 
     public PostReadDto deleteById(final long id);

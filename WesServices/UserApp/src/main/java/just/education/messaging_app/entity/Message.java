@@ -1,9 +1,9 @@
 package just.education.messaging_app.entity;
 
 import lombok.Getter;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
+import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.SequenceGenerator;
 
@@ -28,16 +29,16 @@ import java.util.Objects;
 public class Message {
 
     @Id
-    @GeneratedValue(generator = "message_id_seq")
+    @GeneratedValue(generator = "message_id_seq", strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "message_id_seq", sequenceName = "message_id_sequence")
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "sender_id", table = "post", referencedColumnName = "id")
+    @JoinColumn(name = "sender_id", table = "message", referencedColumnName = "id")
     private User sender;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "receiver_id", table = "post", referencedColumnName = "id")
+    @JoinColumn(name = "receiver_id", table = "message", referencedColumnName = "id")
     private User receiver;
 
     @Column(name = "text")

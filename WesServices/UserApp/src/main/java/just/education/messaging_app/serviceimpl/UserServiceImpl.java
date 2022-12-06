@@ -28,6 +28,7 @@ public class UserServiceImpl implements UserService {
     }
 
 
+    @Override
     public UserReadDto create(UserCreateDto userCreateDto) {
 
         final User newUser = userMapper.toUser(userCreateDto);
@@ -42,6 +43,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.toUserReadDto(createdUser);
     }
 
+    @Override
     public UserReadDto findById(final long id) {
 
         final User user = userRepository.retrieveById(id);
@@ -49,6 +51,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.toUserReadDto(user);
     }
 
+    @Override
     public List<UserReadDto> findAll() {
 
         final List<User> users = userRepository.retrieveAll();
@@ -56,6 +59,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.toUserReadDtoList(users);
     }
 
+    @Override
     public UserReadDto updateById(final long id, UserUpdateDto userUpdateDto) {
 
         final User currentUser = userRepository.retrieveById(id);
@@ -67,6 +71,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.toUserReadDto(updatedUser);
     }
 
+    @Override
     public UserReadDto deleteById(final long id) {
 
         final User user = userRepository.deleteById(id);

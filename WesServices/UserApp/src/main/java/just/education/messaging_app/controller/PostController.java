@@ -4,10 +4,14 @@ import just.education.messaging_app.dto.PostReadDto;
 import just.education.messaging_app.dto.PostUpdateDto;
 import just.education.messaging_app.service.PostService;
 
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 
 @RestController
@@ -30,16 +34,6 @@ public class PostController {
     @GetMapping(path = "/{id}")
     public PostReadDto findPostById(@PathVariable("id") final long id) {
         return postService.findById(id);
-    }
-
-    @GetMapping(path = "/posts")
-    public List<PostReadDto> findPostsBySender(@RequestParam("senderId") final long id) {
-        return postService.findPostsBySenderId(id);
-    }
-
-    @GetMapping(path = "/posts")
-    public List<PostReadDto> findPostsByReceiver(@RequestParam("receiverId") final long id) {
-        return postService.findPostsByReceiverId(id);
     }
 
     @PutMapping(path = "/{id}")

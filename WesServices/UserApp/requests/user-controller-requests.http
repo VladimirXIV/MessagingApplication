@@ -1,3 +1,4 @@
+### create user
 POST  http://localhost:9090/users
 Accept: application/json
 Content-Type: application/json
@@ -13,25 +14,7 @@ Content-Type: application/json
   "profileInfo": "An American comic book writer, editor, publisher, and producer"
 }
 
-###
-POST http://localhost:9090/users/104/post
-Accept: application/json
-Content-Type: application/json
-
-{
-  "senderId": 9890,
-  "message": "Guten Morgen liebe Sorgen!"
-}
-
-###
-GET http://localhost:9090/users/104
-Accept: application/json
-
-###
-GET http://localhost:9090/users
-Accept: application/json
-
-###
+### update user
 PUT http://localhost:9090/users/102
 Accept: application/json
 Content-Type: application/json
@@ -43,4 +26,45 @@ Content-Type: application/json
   "mobile": "+7 800 5000 500",
   "email": "cliffordpr@gmail.com",
   "profileInfo": "American actor"
+}
+
+### retrieve user
+GET http://localhost:9090/users/104
+Accept: application/json
+
+### retrieve all users
+POST http://localhost:9090/users
+Accept: application/json
+
+### delete user
+DELETE http://localhost:9090/users/104
+Accept: application/json
+
+### create post
+POST http://localhost:9090/users/104/post
+Accept: application/json
+Content-Type: application/json
+
+{
+  "receiverId": 9890,
+  "text": "Guten Morgen liebe Sorgen!"
+}
+
+### create message
+POST http://localhost:9090/users/104/message
+Accept: application/json
+Content-Type: application/json
+
+{
+  "receiverId": 9890,
+  "text": "Guten Morgen liebe Sorgen!"
+}
+
+### create follower
+POST  http://localhost:9090/users/104/follower
+Accept: application/json
+Content-Type: application/json
+
+{
+
 }

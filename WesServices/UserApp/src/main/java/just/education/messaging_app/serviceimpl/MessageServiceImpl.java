@@ -10,7 +10,6 @@ import just.education.messaging_app.service.MessageService;
 
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.List;
 
 
 public class MessageServiceImpl implements MessageService {
@@ -51,22 +50,6 @@ public class MessageServiceImpl implements MessageService {
         final Message message = messageRepository.retrieveById(id);
 
         return messageMapper.toMessageReadDto(message);
-    }
-
-    @Override
-    public List<MessageReadDto> findMessagesBySenderId(final long id) {
-
-        final List<Message> messages = messageRepository.retrieveBySenderId(id);
-
-        return messageMapper.toMessageReadDtoList(messages);
-    }
-
-    @Override
-    public List<MessageReadDto> findMessagesByReceiverId(final long id) {
-
-        final List<Message> messages = messageRepository.retrieveByReceiverId(id);
-
-        return messageMapper.toMessageReadDtoList(messages);
     }
 
     @Override

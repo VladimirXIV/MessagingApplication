@@ -1,21 +1,16 @@
-###
+### retreive post
 GET http://localhost:9090/posts/104
 Accept: application/json
 
-###
-GET http://localhost:9090/posts?senderId={102}
-Accept: application/json
-
-###
-GET http://localhost:9090/posts?receiverId={102}
-Accept: application/json
-
-###
+### update post
 PUT http://localhost:9090/posts/104
 Accept: application/json
 Content-Type: application/json
 
 {
-  "senderId": 1470,
-  "message": "Denn immer wenn ich einsam bin, zieht es mich zum Dunkel hin"
+  "text": "Denn immer wenn ich einsam bin, zieht es mich zum Dunkel hin"
 }
+
+### delete post
+DELETE http://localhost:9090/posts/104
+Accept: application/json

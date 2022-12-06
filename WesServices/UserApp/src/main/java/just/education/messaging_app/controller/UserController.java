@@ -13,7 +13,6 @@ import just.education.messaging_app.service.MessageService;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +32,7 @@ public class UserController {
     private PostService postService;
     private MessageService messageService;
 
+
     public UserController() {
 
     }
@@ -50,14 +50,9 @@ public class UserController {
         return userService.create(userCreateDto);
     }
 
-    @PostMapping(path = "/{id}/post")
-    public PostReadDto createPost(@PathVariable final long id, @RequestBody PostCreateDto postCreateDto) {
-        return postService.create(id, postCreateDto);
-    }
-
-    @PostMapping(path = "/{id}/message")
-    public MessageReadDto createMessage(@PathVariable final long id, @RequestBody MessageCreateDto messageCreateDto) {
-        return messageService.create(id, messageCreateDto);
+    @PutMapping(path = "/{id}")
+    public UserReadDto updateUser(@PathVariable final long id, @RequestBody UserUpdateDto userDto) {
+        return userService.updateById(id, userDto);
     }
 
     @GetMapping(path = "/{id}")
@@ -70,13 +65,18 @@ public class UserController {
         return userService.findAll();
     }
 
-    @PutMapping(path = "/{id}")
-    public UserReadDto updateUser(@PathVariable final long id, @RequestBody UserUpdateDto userDto) {
-        return userService.updateById(id, userDto);
-    }
-
     @DeleteMapping(path = "/{id}")
     public UserReadDto deleteUserById(@PathVariable("id") final int id) {
         return userService.deleteById(id);
+    }
+
+    @PostMapping(path = "/{id}/post")
+    public PostReadDto createPost(@PathVariable final long id, @RequestBody PostCreateDto postCreateDto) {
+        return postService.create(id, postCreateDto);
+    }
+
+    @PostMapping(path = "/{id}/message")
+    public MessageReadDto createMessage(@PathVariable final long id, @RequestBody MessageCreateDto messageCreateDto) {
+        return messageService.create(id, messageCreateDto);
     }
 }
