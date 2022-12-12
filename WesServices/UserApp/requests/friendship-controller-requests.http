@@ -1,0 +1,7 @@
+### retreive friendship
+GET http://localhost:9090/friendship/104
+Accept: application/json
+
+### delete friendship
+DELETE http://localhost:9090/friendship/104
+Accept: application/json

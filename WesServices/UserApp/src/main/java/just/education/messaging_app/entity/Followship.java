@@ -40,6 +40,13 @@ public class Followship {
     @JoinColumn(name = "followed_id", table = "followship", referencedColumnName = "id")
     private User followed;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "type_id", table = "followship", referencedColumnName = "id")
+    private FollowshipType type;
+
+    @Column(name = "notes")
+    private String notes;
+
     @Column(name = "created_at")
     private Timestamp createdAt;
 

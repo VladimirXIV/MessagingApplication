@@ -60,11 +60,22 @@ Content-Type: application/json
   "text": "Guten Morgen liebe Sorgen!"
 }
 
-### create follower
-POST  http://localhost:9090/users/104/follower
+### create friendship relation
+POST  http://localhost:9090/users/104/friend
 Accept: application/json
 Content-Type: application/json
 
 {
+
+
+}
+
+### create followship relation
+POST http://localhost:9090/users/104/follower
+Accept: application/json
+Content-Type: application/json
+
+{
+
 
 }

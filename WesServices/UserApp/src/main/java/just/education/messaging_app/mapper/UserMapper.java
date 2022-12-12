@@ -21,9 +21,9 @@ public class UserMapper {
 
     public UserMapper() {
 
-        mapper = new ModelMapper();
+        this.mapper = new ModelMapper();
 
-        mapper.createTypeMap(UserCreateDto.class, User.class, "userCreateDtoToUser")
+        this.mapper.createTypeMap(UserCreateDto.class, User.class, "userCreateDtoToUser")
                 .addMappings(new PropertyMap<UserCreateDto, User>() {
 
                     @Override
@@ -39,7 +39,7 @@ public class UserMapper {
                     }
                 });
 
-        mapper.createTypeMap(UserUpdateDto.class, User.class, "userUpdateDtoToUser")
+        this.mapper.createTypeMap(UserUpdateDto.class, User.class, "userUpdateDtoToUser")
                 .addMappings(new PropertyMap<UserUpdateDto, User>() {
 
                     @Override
@@ -55,7 +55,7 @@ public class UserMapper {
                     }
                 });
 
-        mapper.createTypeMap(UserUpdateDto.class, User.class, "userUpdateDtoNotNullFieldsToUser")
+        this.mapper.createTypeMap(UserUpdateDto.class, User.class, "userUpdateDtoNotNullFieldsToUser")
                 .addMappings(new PropertyMap<UserUpdateDto, User>() {
 
                     @Override
@@ -72,7 +72,7 @@ public class UserMapper {
                     }
                 });
 
-        mapper.createTypeMap(User.class, UserReadDto.class, "userToUserReadDto")
+        this.mapper.createTypeMap(User.class, UserReadDto.class, "userToUserReadDto")
                 .addMappings(new PropertyMap<User, UserReadDto>() {
 
                     @Override
@@ -95,19 +95,19 @@ public class UserMapper {
     }
 
     public User toUser(UserCreateDto userCreateDto) {
-        return mapper.map(userCreateDto, User.class, "userCreateDtoToUser");
+        return this.mapper.map(userCreateDto, User.class, "userCreateDtoToUser");
     }
 
     public User toUser(UserUpdateDto userUpdateDto) {
-        return mapper.map(userUpdateDto, User.class, "userUpdateDtoToUser");
+        return this.mapper.map(userUpdateDto, User.class, "userUpdateDtoToUser");
     }
 
     public void toUserNonNullFields(UserUpdateDto userUpdateDto, User user) {
-        mapper.map(userUpdateDto, user, "userUpdateDtoNotNullFieldsToUser");
+        this.mapper.map(userUpdateDto, user, "userUpdateDtoNotNullFieldsToUser");
     }
 
     public UserReadDto toUserReadDto(User user) {
-        return mapper.map(user, UserReadDto.class, "userToUserReadDto");
+        return this.mapper.map(user, UserReadDto.class, "userToUserReadDto");
     }
 
     public List<UserReadDto> toUserReadDtoList(Collection<User> users) {

@@ -4,4 +4,4 @@ create table friendship_status (
     name char(200) not null,
 
     constraint friendship_status_pk primary key (code)
-)
+);
