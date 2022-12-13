@@ -1,0 +1,1 @@
+create sequence followship_type_id_sequence start with 2000 increment by 50;

@@ -1,0 +1,1 @@
+create sequence message_id_sequence start with 100 increment by 2;

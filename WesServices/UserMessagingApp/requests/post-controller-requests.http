@@ -1,0 +1,16 @@
+### retreive post
+GET http://localhost:9090/posts/110
+Accept: application/json
+
+### update post
+PUT http://localhost:9090/posts/104
+Accept: application/json
+Content-Type: application/json
+
+{
+  "text": "Denn immer wenn ich einsam bin, zieht es mich zum Dunkel hin"
+}
+
+### delete post
+DELETE http://localhost:9090/posts/104
+Accept: application/json

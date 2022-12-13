@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>just.education</groupId>
+    <artifactId>user-messaging-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <description>user-messaging-app</description>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <javax.persistence.veresion>2.2</javax.persistence.veresion>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <spring-web.version>5.3.23</spring-web.version>
+
+        <lombok.version>1.18.24</lombok.version>
+        <modelmapper.version>3.1.0</modelmapper.version>
+        <hibernate.version>5.6.11.Final</hibernate.version>
+        <org.postgresql.version>42.5.0</org.postgresql.version>
+        <org.flyway.version>9.7.0</org.flyway.version>
+        <spring-tx.version>5.3.23</spring-tx.version>
+        <spring-core.version>5.3.23</spring-core.version>
+        <spring-orm.version>5.3.23</spring-orm.version>
+        <spring-boot.version>2.7.5</spring-boot.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring-web.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${modelmapper.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${org.postgresql.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>${javax.persistence.veresion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring-tx.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring-orm.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+
+        <profile>
+            <id>dev-environment-flyway</id>
+            <properties>
+                <database.driver>org.postgresql.Driver</database.driver>
+                <database.url>jdbc:postgresql://localhost:5454/users</database.url>
+                <database.user>db_root</database.user>
+                <database.password>db_root</database.password>
+                <flyway-script.location>classpath:database/migration/dev</flyway-script.location>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.flywaydb</groupId>
+                        <artifactId>flyway-maven-plugin</artifactId>
+                        <version>${org.flyway.version}</version>
+                        <configuration>
+                            <driver>${database.driver}</driver>
+                            <url>${database.url}</url>
+                            <user>${database.user}</user>
+                            <password>${database.password}</password>
+                            <validateOnMigrate>true</validateOnMigrate>
+                            <defaultSchema>user_schema</defaultSchema>
+                            <table>USER_SCHEMA_HISTORY_TABLE</table>
+                            <sqlMigrationPrefix>D</sqlMigrationPrefix>
+                            <sqlMigrationSeparator>__</sqlMigrationSeparator>
+                            <sqlMigrationSuffixes>.sql</sqlMigrationSuffixes>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>dev-environment-flyway-exec</id>
+                                <goals>
+                                    <goal>migrate</goal>
+                                </goals>
+                                <configuration>
+                                    <locations>
+                                        <location>${flyway-script.location}</location>
+                                    </locations>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>test-environment-flyway</id>
+            <properties>
+                <database.driver>org.postgresql.Driver</database.driver>
+                <database.url>jdbc:postgresql://localhost:5454/users</database.url>
+                <database.user>db_root</database.user>
+                <database.password>db_root</database.password>
+                <flyway-script.location.dev>classpath:/database/migration/dev</flyway-script.location.dev>
+                <flyway-script.location.test>classpath:/database/migration/test</flyway-script.location.test>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.flywaydb</groupId>
+                        <artifactId>flyway-maven-plugin</artifactId>
+                        <version>${org.flyway.version}</version>
+                        <configuration>
+                            <driver>${database.driver}</driver>
+                            <url>${database.url}</url>
+                            <user>${database.user}</user>
+                            <password>${database.password}</password>
+                            <validateOnMigrate>true</validateOnMigrate>
+                            <createSchemas>true</createSchemas>
+                            <schemas>
+                                <schema>user_schema</schema>
+                            </schemas>
+                            <table>user_schema_history_table</table>
+                            <sqlMigrationPrefix>D</sqlMigrationPrefix>
+                            <sqlMigrationSeparator>__</sqlMigrationSeparator>
+                            <sqlMigrationSuffixes>.sql</sqlMigrationSuffixes>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>test-environment-flyway-exec</id>
+                                <goals>
+                                    <goal>migrate</goal>
+                                </goals>
+                                <configuration>
+                                    <locations>
+                                        <location>${flyway-script.location.dev}</location>
+                                        <location>${flyway-script.location.test}</location>
+                                    </locations>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+</project>

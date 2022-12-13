@@ -1,0 +1,17 @@
+### retreive message
+GET http://localhost:9090/messages/108
+Accept: application/json
+
+### update message
+PUT http://localhost:9090/messages/104
+Accept: application/json
+Content-Type: application/json
+
+{
+  "receiverId": 909,
+  "text": "hhh"
+}
+
+### delete message
+DELETE http://localhost:9090/messages/104
+Accept: application/json

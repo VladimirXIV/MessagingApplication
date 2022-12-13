@@ -1,0 +1,13 @@
+insert into
+    "user" (id, first_name, middle_name, last_name, username, mobile, email, registered_at, last_login, intro, profile_info)
+values
+    (nextval('user_id_sequence'), 'James',    'Edward',      'Franco',  'Harry Osborn',           '+7 800 2000 600', 'jamesef@gmail.com',    '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Life is concise, so put worries apart', 'An American actor and filmmaker'),
+    (nextval('user_id_sequence'), 'Tobias',   'Vincent',     'Maguire', 'Peter Parker',           '+7 800 2000 700', 'tobiasvm@yahoo.com',   '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Where happy life settles, age doesn''t matter', 'An American actor and film producer'),
+    (nextval('user_id_sequence'), 'Kirsten',  'Caroline',    'Dunst',    'Mary Jane',             '+7 800 2000 800', 'kirstencd@inbox.com',  '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Help others in need; life is about you being there for people', 'An American actress'),
+    (nextval('user_id_sequence'), 'Alfred',   'Esteban',     'Molina',   'Otto Gunther Octavius', '+7 800 4000 100', 'alfredem@gmail.com',   '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Love should never be a secret', 'An English-American actor known for his work on the stage and screen'),
+    (nextval('user_id_sequence'), 'William',  'James',       'Dafoe',    'Norman Osborn',         '+7 800 3000 900', 'williamjd@yahoo.com',  '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Back To Formula!', 'An American actor'),
+    (nextval('user_id_sequence'), 'Rosemary', 'Ann',         'Harris',   'May Parker',            '+7 200 1000 100', 'rosemaryah@yahoo.com', '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'When you help someone, you help everyone', 'A British actress'),
+    (nextval('user_id_sequence'), 'Jonathan', 'Kimble',      'Simmons',  'J. Jonah Jameson',      '+7 200 1000 100', 'jonathanks@yahoo.com', '2011-02-01T16:34:02', '2018-03-01T16:34:03', 'I expect photos from you Parker — great photos!', 'An American actor'),
+    (nextval('user_id_sequence'), 'Bryce',    'Dallas',      'Howard',   'Gwen Stacy',            '+7 800 8000 200', 'brycedh@yahoo.com',    '2015-10-01T13:34:04', '2017-07-01T14:14:04', 'Really?', 'An American actress and director'),
+    (nextval('user_id_sequence'), 'Mageina',  'Tovah',       'Begtrup',  'Ursula Ditkovich',      '+7 100 9090 300', 'mageinahtb@yahoo.com', '2011-11-01T13:14:04', '2012-02-01T14:54:04', 'I think that would be so good...', 'An American actress'),
+    (nextval('user_id_sequence'), 'Ilya',     'Zalmanovich', 'Baskin',   'Mister Ditkovich',      '+7 800 1010 100', 'ilyazb@yahoo.com',     '2015-10-06T11:14:01', '2018-03-03T18:54:09', 'I have ears like a cat! And eyes like a rodent', 'A Latvian-American character actor');

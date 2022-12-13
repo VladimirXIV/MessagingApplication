@@ -1,0 +1,1 @@
+create sequence friendship_type_id_sequence start with 1000 increment by 200;

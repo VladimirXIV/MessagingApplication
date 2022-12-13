@@ -1,0 +1,40 @@
+insert into
+    "post" (id, sender_id, receiver_id, created_at, updated_at, text)
+values
+    (nextval('post_id_sequence'), 102, 100, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hello fellas!'),
+    (nextval('post_id_sequence'), 104, 100, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Great acting. Amazing soundtrack that was performed by Danny Elfman, especially the opening score really fits the films opening scene.'),
+    (nextval('post_id_sequence'), 104, 100, '1990-01-01T01:34:02', '2010-01-01T11:14:02', 'I adore being outdoors, being close to water'),
+    (nextval('post_id_sequence'), 104, 102, '1991-01-01T01:34:02', '2010-01-02T11:14:03', 'This is one of the reasons why I adore Chile.'),
+    (nextval('post_id_sequence'), 106, 104, '1992-01-01T01:34:02', '2010-01-12T11:14:04', 'And sure fans will still adore him.'),
+    (nextval('post_id_sequence'), 106, 100, '1993-01-02T02:34:02', '2011-01-13T11:34:05', 'I adore everything this man does.'),
+    (nextval('post_id_sequence'), 106, 102, '1994-01-02T02:34:02', '2011-04-13T11:11:06', 'I adore you and I think you''re amazing.'),
+    (nextval('post_id_sequence'), 106, 104, '1995-02-02T02:34:02', '2011-04-11T12:12:07', 'Because everywhere I go, people still adore Indian culture.'),
+    (nextval('post_id_sequence'), 108, 100, '1996-02-03T02:34:02', '2011-04-11T12:13:08', 'Americans adore inventors and rags-to-riches heroes.'),
+    (nextval('post_id_sequence'), 108, 102, '1997-02-03T02:34:04', '2012-04-11T12:14:09', 'Our daughter has two parents who love and adore her.'),
+    (nextval('post_id_sequence'), 108, 104, '1998-02-03T03:14:04', '2012-04-11T12:15:14', 'Reading about ancient cultures is an activity you adore.'),
+    (nextval('post_id_sequence'), 108, 106, '1999-03-03T03:14:01', '2012-04-13T13:15:19', 'She added: They adore each other.'),
+    (nextval('post_id_sequence'), 108, 110, '2000-04-03T03:34:02', '2012-04-11T13:15:12', 'Little children adore music from the ballets The Nutcracker and Swan Lake.'),
+    (nextval('post_id_sequence'), 108, 112, '2000-04-03T03:34:02', '2012-04-11T16:16:12', 'Start by questioning if you still adore her.'),
+    (nextval('post_id_sequence'), 108, 114, '2001-04-04T04:34:02', '2012-05-11T13:16:12', 'We generally adore people who know their body well and wear clothes accordingly.'),
+    (nextval('post_id_sequence'), 108, 114, '2001-04-04T04:34:02', '2012-05-11T13:16:12', 'I adore and appreciate this town.'),
+    (nextval('post_id_sequence'), 108, 114, '2002-04-04T04:34:02', '2012-05-11T13:17:12', 'Please bring us the baby we already love and adore.'),
+    (nextval('post_id_sequence'), 108, 114, '2002-04-04T04:34:02', '2012-05-21T13:17:12', 'You know how I adore those empire bacon scones.'),
+    (nextval('post_id_sequence'), 108, 114, '2002-04-04T05:34:02', '2013-05-21T13:17:22', 'First, you should know I adore Alfred.'),
+    (nextval('post_id_sequence'), 108, 116, '2003-05-05T05:34:02', '2013-05-21T14:17:22', 'And FYI, old people adore me.'),
+    (nextval('post_id_sequence'), 110, 104, '2003-05-05T05:34:02', '2013-05-21T14:18:22', 'You know how I adore those empire bacon scones.'),
+    (nextval('post_id_sequence'), 110, 104, '2003-05-05T06:34:02', '2013-05-21T14:18:32', 'He does something nice for three people.'),
+    (nextval('post_id_sequence'), 110, 104, '2004-05-05T06:34:02', '2013-06-21T14:19:32', 'I thought he was such a nice nice guy.'),
+    (nextval('post_id_sequence'), 110, 112, '2005-05-05T06:34:02', '2013-06-22T15:19:32', 'Got a nice house nice wife nice kid.'),
+    (nextval('post_id_sequence'), 110, 112, '2005-05-05T06:34:02', '2014-06-22T15:19:42', 'I knew I had to choose nice girls, nice nice nice girls.'),
+    (nextval('post_id_sequence'), 114, 110, '2005-05-05T06:34:02', '2014-06-22T15:20:42', 'It''s a nice blend and a nice balance.'),
+    (nextval('post_id_sequence'), 114, 102, '2006-05-05T07:34:02', '2014-06-22T15:20:42', 'My grandmother is also a nice woman and tells us nice stories every night.'),
+    (nextval('post_id_sequence'), 114, 102, '2006-06-06T07:34:02', '2014-07-23T15:20:42', 'Be nice and people will be nice.'),
+    (nextval('post_id_sequence'), 114, 102, '2006-06-06T07:34:02', '2014-07-23T16:21:52', 'Surely, it''s nice when people come up to you and say nice things.'),
+    (nextval('post_id_sequence'), 114, 106, '2007-07-06T07:34:02', '2014-07-24T16:21:52', 'But I can be nice, if you''re nice in return.'),
+    (nextval('post_id_sequence'), 114, 106, '2007-07-06T07:34:02', '2014-07-24T16:22:12', 'Maybe now you buy nice car, and go out to meet nice lassie.'),
+    (nextval('post_id_sequence'), 114, 106, '2008-08-06T07:34:02', '2015-08-24T16:24:13', 'Inhibitions are always nice because they''re so nice to overcome.'),
+    (nextval('post_id_sequence'), 114, 106, '2008-08-06T07:34:02', '2015-09-24T17:24:14', 'I mean, I think it''s nice to do something nice on Daisy''s last day.'),
+    (nextval('post_id_sequence'), 114, 106, '2008-09-06T07:34:02', '2015-09-24T17:24:15', 'You talk in nice voices, but you don''t sound so nice.');
+
+
+

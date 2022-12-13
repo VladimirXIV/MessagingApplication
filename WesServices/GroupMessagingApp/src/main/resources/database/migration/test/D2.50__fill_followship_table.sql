@@ -1,0 +1,28 @@
+insert into
+    followship (id, follower_id, followed_id, type_id, created_at, updated_at, notes)
+values
+    (nextval('followship_id_sequence'), 100, 102, 2000, '2000-01-01T01:11:00', '2010-01-01T01:21:00', 'Tungjatjeta!'),
+    (nextval('followship_id_sequence'), 100, 104, 2050, '2000-02-02T02:12:00', '2010-02-02T02:22:00', 'Grüßgott!'),
+    (nextval('followship_id_sequence'), 100, 106, 2000, '2000-03-03T03:13:00', '2010-03-03T03:23:00', 'Kaixo!'),
+    (nextval('followship_id_sequence'), 100, 108, 2000, '2000-04-04T04:14:00', '2010-04-04T04:24:00', 'Degemer Mad!'),
+    (nextval('followship_id_sequence'), 100, 110, 2000, '2000-05-05T05:15:20', '2010-05-05T05:25:00', 'Zdraveite!'),
+    (nextval('followship_id_sequence'), 100, 112, 2000, '2000-06-06T06:16:20', '2010-06-06T06:26:00', 'Hej!'),
+    (nextval('followship_id_sequence'), 102, 114, 2000, '2001-07-07T07:17:20', '2010-07-07T07:27:00', 'Bona tarda!'),
+    (nextval('followship_id_sequence'), 102, 100, 2050, '2001-08-08T08:18:20', '2010-08-08T08:28:00', 'Dobro jutro!'),
+    (nextval('followship_id_sequence'), 102, 104, 2000, '2001-09-09T09:19:20', '2011-09-09T09:29:00', 'Ahoj!'),
+    (nextval('followship_id_sequence'), 102, 106, 2000, '2001-10-10T10:20:20', '2011-10-10T10:30:10', 'Godaften!'),
+    (nextval('followship_id_sequence'), 102, 108, 2000, '2001-01-11T11:21:00', '2011-11-11T11:31:10', 'Salut'),
+    (nextval('followship_id_sequence'), 102, 110, 2050, '2001-02-12T12:22:00', '2011-12-12T12:32:10', 'Goeie dei!'),
+    (nextval('followship_id_sequence'), 102, 112, 2000, '2001-03-13T13:23:00', '2011-01-13T13:33:10', 'Dia duit!'),
+    (nextval('followship_id_sequence'), 102, 114, 2000, '2001-04-14T14:24:00', '2012-02-14T14:34:10', 'Gamardjoba!'),
+    (nextval('followship_id_sequence'), 104, 100, 2000, '2002-05-15T15:25:00', '2012-03-15T15:35:10', 'Guten Tag!'),
+    (nextval('followship_id_sequence'), 104, 102, 2000, '2002-06-16T16:26:40', '2012-04-15T16:36:20', 'Grüß Gott!'),
+    (nextval('followship_id_sequence'), 104, 106, 2050, '2002-07-17T17:27:40', '2013-05-16T17:37:20', 'Moinsen!'),
+    (nextval('followship_id_sequence'), 104, 108, 2000, '2002-08-18T18:28:40', '2013-06-17T18:38:20', 'Grüessech!'),
+    (nextval('followship_id_sequence'), 104, 110, 2000, '2002-09-19T19:29:40', '2013-07-18T19:39:20', 'Szervusz!'),
+    (nextval('followship_id_sequence'), 104, 112, 2000, '2003-10-20T20:30:40', '2014-08-19T20:40:20', 'Salve!'),
+    (nextval('followship_id_sequence'), 104, 114, 2000, '2003-01-21T21:31:00', '2014-09-20T21:41:20', 'Labdien!'),
+    (nextval('followship_id_sequence'), 106, 100, 2050, '2003-02-22T22:32:00', '2014-10-21T22:42:00', 'Laba diena!'),
+    (nextval('followship_id_sequence'), 106, 102, 2000, '2003-03-23T23:33:00', '2015-11-22T23:43:00', 'Bongu!'),
+    (nextval('followship_id_sequence'), 106, 104, 2000, '2003-04-01T01:34:50', '2015-12-23T23:44:00', 'God dag!'),
+    (nextval('followship_id_sequence'), 106, 108, 2050, '2003-05-02T02:35:50', '2015-01-01T01:45:00', 'Bom dia!');
