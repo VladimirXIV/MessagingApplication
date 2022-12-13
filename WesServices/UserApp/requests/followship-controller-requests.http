@@ -1,7 +1,0 @@
-### retreive followship
-GET http://localhost:9090/followship/104
-Accept: application/json
-
-### delete followship
-DELETE http://localhost:9090/followship/104
-Accept: application/json

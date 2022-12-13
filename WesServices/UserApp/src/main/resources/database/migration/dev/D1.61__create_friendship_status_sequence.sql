@@ -1,1 +1,0 @@
-create sequence friendship_status_code_sequence start with 100 increment by 20;
