@@ -1,1 +1,0 @@
-create sequence if not exists group_id_sequence increment by 2 start with 100;

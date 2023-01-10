@@ -1,1 +1,0 @@
-create sequence if not exists group_role_id_sequence increment by 10 start with 300;
