@@ -13,7 +13,7 @@ public class JpaConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactory.setPersistenceUnitName("USER_APPLICATION_PERSISTENCE");
+        entityManagerFactory.setPersistenceUnitName("USER_MESSAGING_APPLICATION_PERSISTENCE");
 
         return entityManagerFactory;
     }

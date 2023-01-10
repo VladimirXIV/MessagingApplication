@@ -10,18 +10,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>user-messaging-app</description>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <properties>
         <java.version>1.8</java.version>
@@ -107,6 +95,19 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <profiles>
 
         <profile>
@@ -114,8 +115,8 @@
             <properties>
                 <database.driver>org.postgresql.Driver</database.driver>
                 <database.url>jdbc:postgresql://localhost:5454/users</database.url>
-                <database.user>db_root</database.user>
-                <database.password>db_root</database.password>
+                <database.user>user_dev</database.user>
+                <database.password>user_dev</database.password>
                 <flyway-script.location>classpath:database/migration/dev</flyway-script.location>
             </properties>
             <build>
@@ -130,8 +131,11 @@
                             <user>${database.user}</user>
                             <password>${database.password}</password>
                             <validateOnMigrate>true</validateOnMigrate>
-                            <defaultSchema>user_schema</defaultSchema>
-                            <table>USER_SCHEMA_HISTORY_TABLE</table>
+                            <createSchemas>true</createSchemas>
+                            <schemas>
+                                <schema>user_schema</schema>
+                            </schemas>
+                            <table>user_schema_history_table</table>
                             <sqlMigrationPrefix>D</sqlMigrationPrefix>
                             <sqlMigrationSeparator>__</sqlMigrationSeparator>
                             <sqlMigrationSuffixes>.sql</sqlMigrationSuffixes>
@@ -159,8 +163,8 @@
             <properties>
                 <database.driver>org.postgresql.Driver</database.driver>
                 <database.url>jdbc:postgresql://localhost:5454/users</database.url>
-                <database.user>db_root</database.user>
-                <database.password>db_root</database.password>
+                <database.user>user_dev</database.user>
+                <database.password>user_dev</database.password>
                 <flyway-script.location.dev>classpath:/database/migration/dev</flyway-script.location.dev>
                 <flyway-script.location.test>classpath:/database/migration/test</flyway-script.location.test>
             </properties>

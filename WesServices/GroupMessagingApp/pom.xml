@@ -10,18 +10,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>group-messaging-app</description>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <properties>
         <java.version>1.8</java.version>
@@ -32,8 +20,9 @@
 
         <spring-web.version>5.3.23</spring-web.version>
 
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <lombok.version>1.18.24</lombok.version>
-        <modelmapper.version>3.1.0</modelmapper.version>
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
         <hibernate.version>5.6.11.Final</hibernate.version>
         <org.postgresql.version>42.5.0</org.postgresql.version>
         <org.flyway.version>9.7.0</org.flyway.version>
@@ -41,6 +30,7 @@
         <spring-core.version>5.3.23</spring-core.version>
         <spring-orm.version>5.3.23</spring-orm.version>
         <spring-boot.version>2.7.5</spring-boot.version>
+        <spring-data.version>2.7.5</spring-data.version>
     </properties>
 
     <dependencies>
@@ -52,15 +42,27 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.modelmapper</groupId>
-            <artifactId>modelmapper</artifactId>
-            <version>${modelmapper.version}</version>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>1.4.2.Final</version>
         </dependency>
 
         <dependency>
@@ -107,15 +109,41 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <profiles>
 
         <profile>
             <id>dev-environment-flyway</id>
             <properties>
                 <database.driver>org.postgresql.Driver</database.driver>
-                <database.url>jdbc:postgresql://localhost:5454/users</database.url>
-                <database.user>db_root</database.user>
-                <database.password>db_root</database.password>
+                <database.url>jdbc:postgresql://localhost:5454/groups</database.url>
+                <database.user>group_dev</database.user>
+                <database.password>group_dev</database.password>
                 <flyway-script.location>classpath:database/migration/dev</flyway-script.location>
             </properties>
             <build>
@@ -130,8 +158,11 @@
                             <user>${database.user}</user>
                             <password>${database.password}</password>
                             <validateOnMigrate>true</validateOnMigrate>
-                            <defaultSchema>user_schema</defaultSchema>
-                            <table>USER_SCHEMA_HISTORY_TABLE</table>
+                            <createSchemas>true</createSchemas>
+                            <schemas>
+                                <schema>group_schema</schema>
+                            </schemas>
+                            <table>group_schema_history_table</table>
                             <sqlMigrationPrefix>D</sqlMigrationPrefix>
                             <sqlMigrationSeparator>__</sqlMigrationSeparator>
                             <sqlMigrationSuffixes>.sql</sqlMigrationSuffixes>
@@ -158,9 +189,9 @@
             <id>test-environment-flyway</id>
             <properties>
                 <database.driver>org.postgresql.Driver</database.driver>
-                <database.url>jdbc:postgresql://localhost:5454/users</database.url>
-                <database.user>db_root</database.user>
-                <database.password>db_root</database.password>
+                <database.url>jdbc:postgresql://localhost:5454/groups</database.url>
+                <database.user>group_dev</database.user>
+                <database.password>group_dev</database.password>
                 <flyway-script.location.dev>classpath:/database/migration/dev</flyway-script.location.dev>
                 <flyway-script.location.test>classpath:/database/migration/test</flyway-script.location.test>
             </properties>
@@ -178,9 +209,9 @@
                             <validateOnMigrate>true</validateOnMigrate>
                             <createSchemas>true</createSchemas>
                             <schemas>
-                                <schema>user_schema</schema>
+                                <schema>group_schema</schema>
                             </schemas>
-                            <table>user_schema_history_table</table>
+                            <table>group_schema_history_table</table>
                             <sqlMigrationPrefix>D</sqlMigrationPrefix>
                             <sqlMigrationSeparator>__</sqlMigrationSeparator>
                             <sqlMigrationSuffixes>.sql</sqlMigrationSuffixes>

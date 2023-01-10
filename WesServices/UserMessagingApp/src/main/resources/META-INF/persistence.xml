@@ -5,17 +5,20 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
-    <persistence-unit name="USER_APPLICATION_PERSISTENCE" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="USER_MESSAGING_APPLICATION_PERSISTENCE" transaction-type="RESOURCE_LOCAL">
 
         <!-- Persistence provider -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Entity classes -->
+        <class>just.education.user_messaging_app.entity.Followship</class>
+        <class>just.education.user_messaging_app.entity.FollowshipType</class>
+        <class>just.education.user_messaging_app.entity.Friendship</class>
+        <class>just.education.user_messaging_app.entity.FriendshipStatus</class>
+        <class>just.education.user_messaging_app.entity.FriendshipType</class>
+        <class>just.education.user_messaging_app.entity.Message</class>
         <class>just.education.user_messaging_app.entity.User</class>
         <class>just.education.user_messaging_app.entity.Post</class>
-        <class>just.education.user_messaging_app.entity.Follower</class>
-        <class>just.education.user_messaging_app.entity.Friend</class>
-        <class>just.education.user_messaging_app.entity.Message</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
