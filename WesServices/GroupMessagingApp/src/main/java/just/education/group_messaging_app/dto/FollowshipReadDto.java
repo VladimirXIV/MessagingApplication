@@ -5,14 +5,22 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
+import java.sql.Timestamp;
+
 
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class FollowerCreateDto {
+public class FollowshipReadDto {
+
+    private Long id;
+
+    private Long userId;
 
     private Long groupId;
 
-    private Long userId;
+    private Timestamp createdAt;
+
+    private Timestamp updatedAt;
 }

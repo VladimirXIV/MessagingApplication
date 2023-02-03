@@ -1,8 +1,8 @@
 package just.education.group_messaging_app.service;
 
-import just.education.group_messaging_app.dto.GroupCreateDto;
 import just.education.group_messaging_app.dto.GroupReadDto;
-import just.education.group_messaging_app.dto.MessageUpdateDto;
+import just.education.group_messaging_app.dto.GroupCreateDto;
+import just.education.group_messaging_app.dto.GroupUpdateDto;
 
 public interface GroupService {
 
@@ -10,7 +10,7 @@ public interface GroupService {
 
     public GroupReadDto create(GroupCreateDto groupCreateDto);
 
-    public GroupReadDto updateById(final long id, MessageUpdateDto messageUpdateDto);
+    public GroupReadDto updateById(final long id, GroupUpdateDto groupUpdateDto);
 
     public GroupReadDto deleteById(final long id);
 }

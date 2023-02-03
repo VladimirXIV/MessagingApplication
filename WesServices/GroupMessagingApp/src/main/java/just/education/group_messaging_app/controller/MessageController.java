@@ -22,7 +22,7 @@ public class MessageController {
 
 
     @GetMapping(path = "/{id}")
-    public MessageReadDto findMemberById(@PathVariable("id") final long id) {
+    public MessageReadDto findMessageById(@PathVariable("id") final long id) {
         return this.messageService.findById(id);
     }
 

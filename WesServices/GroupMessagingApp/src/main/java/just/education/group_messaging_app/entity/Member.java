@@ -33,19 +33,19 @@ public class Member {
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "group_id", table = "message", referencedColumnName = "id")
+    @JoinColumn(name = "group_id", table = "member", referencedColumnName = "id")
     private Group group;
 
     @Column(name = "user_id")
     private Long userId;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "role_id", table = "message", referencedColumnName = "id")
+    @JoinColumn(name = "role_id", table = "member", referencedColumnName = "id")
     private GroupRole role;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "status_code", table = "message", referencedColumnName = "code")
-    private MemberStatus status;
+    @JoinColumn(name = "last_status_code", table = "member", referencedColumnName = "code")
+    private MemberStatus last_status;
 
     @Column(name = "notes")
     private String notes;

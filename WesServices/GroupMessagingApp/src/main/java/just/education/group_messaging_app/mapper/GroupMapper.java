@@ -1,20 +1,28 @@
 package just.education.group_messaging_app.mapper;
 
 import just.education.group_messaging_app.entity.Group;
+import just.education.group_messaging_app.dto.GroupUpdateDto;
 import just.education.group_messaging_app.dto.GroupReadDto;
 import just.education.group_messaging_app.dto.GroupCreateDto;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.factory.Mappers;
 import org.mapstruct.NullValueMappingStrategy;
 import org.mapstruct.NullValuePropertyMappingStrategy;
-import org.mapstruct.factory.Mappers;
 
 
 @Mapper
 public interface GroupMapper {
 
     GroupMapper INSTANCE = Mappers.getMapper(GroupMapper.class);
+
+    @Mapping(source = "title", target = "title")
+    @Mapping(source = "metaTitle", target = "metaTitle")
+    @Mapping(source = "summary", target = "summary")
+    @Mapping(source = "info", target = "info")
+    public Group toGroup(GroupCreateDto createDto);
 
     @Mapping(source = "id", target = "id")
     @Mapping(source = "title", target = "title")
@@ -29,10 +37,9 @@ public interface GroupMapper {
     @Mapping(source = "updatedAt", target = "updatedAt")
     public GroupReadDto toGroupReadDto(Group group);
 
-
-    @Mapping(source = "title", target = "title")
-    @Mapping(source = "metaTitle", target = "metaTitle")
-    @Mapping(source = "summary", target = "summary")
-    @Mapping(source = "info", target = "info")
-    public Group toGroup(GroupCreateDto createDto);
+    @Mapping(source = "title", target = "title", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(source = "metaTitle", target = "metaTitle", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(source = "summary", target = "summary", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(source = "info", target = "info", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    public void updateGroup(GroupUpdateDto groupUpdateDto, @MappingTarget Group group);
 }

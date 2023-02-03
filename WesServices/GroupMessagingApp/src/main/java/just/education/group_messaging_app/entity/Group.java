@@ -38,15 +38,16 @@ public class Group {
     @Column(name = "meta_title")
     private String metaTitle;
 
-    @Column(name = "summary")
-    private String summary;
+    @Column(name = "description")
+    private String description;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "status_code", table = "friendship", referencedColumnName = "code")
-    private GroupStatus status;
+    @JoinColumn(name = "type_id", table = "group", referencedColumnName = "id")
+    private GroupType type;
 
-    @Column(name = "info")
-    private String info;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "status_code", table = "group", referencedColumnName = "code")
+    private GroupStatus status;
 
     @Column(name = "created_by")
     private Long createdBy;

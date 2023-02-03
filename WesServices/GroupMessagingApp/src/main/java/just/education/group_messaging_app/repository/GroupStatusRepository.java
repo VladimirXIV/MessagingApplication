@@ -6,5 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface GroupStatusRepository extends JpaRepository<GroupStatus, Long> {
 
-    public GroupStatus findByCode(final long code);
+    // get reference by code
+    public GroupStatus getGroupStatusByCode(Long statusCode);
 }

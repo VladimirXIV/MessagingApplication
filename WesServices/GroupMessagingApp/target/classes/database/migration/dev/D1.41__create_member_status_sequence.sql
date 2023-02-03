@@ -1,0 +1,1 @@
+create sequence if not exists member_status_code_sequence increment by 5 start with 700;

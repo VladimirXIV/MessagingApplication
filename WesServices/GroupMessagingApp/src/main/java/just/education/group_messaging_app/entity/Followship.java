@@ -22,18 +22,18 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 @Entity
-@Table(schema = "group_schema", name = "follower")
+@Table(schema = "group_schema", name = "followship")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Follower {
+public class Followship {
 
     @Id
-    @GeneratedValue(generator = "follower_id_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "follower_id_seq", sequenceName = "follower_id_sequence", schema = "group_schema", allocationSize = 1)
+    @GeneratedValue(generator = "followship_id_seq", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "followship_id_seq", sequenceName = "followship_id_sequence", schema = "group_schema", allocationSize = 1)
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "group_id", table = "message", referencedColumnName = "id")
+    @JoinColumn(name = "group_id", table = "followship", referencedColumnName = "id")
     private Group group;
 
     @Column(name = "user_id")

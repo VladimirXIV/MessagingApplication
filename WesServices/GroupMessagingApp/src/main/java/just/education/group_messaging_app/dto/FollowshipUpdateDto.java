@@ -12,15 +12,9 @@ import java.sql.Timestamp;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class FollowerReadDto {
-
-    private Long id;
-
-    private Long userId;
+public class FollowshipUpdateDto {
 
     private Long groupId;
 
-    private Timestamp createdAt;
-
-    private Timestamp updatedAt;
+    private Long userId;
 }

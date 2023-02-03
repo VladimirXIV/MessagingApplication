@@ -1,8 +1,8 @@
 package just.education.group_messaging_app.serviceimpl;
 
-import just.education.group_messaging_app.dto.GroupCreateDto;
 import just.education.group_messaging_app.dto.GroupReadDto;
-import just.education.group_messaging_app.dto.MessageUpdateDto;
+import just.education.group_messaging_app.dto.GroupCreateDto;
+import just.education.group_messaging_app.dto.GroupUpdateDto;
 import just.education.group_messaging_app.entity.Group;
 import just.education.group_messaging_app.entity.GroupStatus;
 import just.education.group_messaging_app.mapper.GroupMapper;
@@ -12,12 +12,13 @@ import just.education.group_messaging_app.repository.GroupStatusRepository;
 
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.Objects;
 
 
 public class GroupServiceImpl implements GroupService {
 
-    private GroupRepository groupRepository;
     private GroupStatusRepository groupStatusRepository;
+    private GroupRepository groupRepository;
     private GroupMapper groupMapper;
 
 
@@ -34,45 +35,59 @@ public class GroupServiceImpl implements GroupService {
     @Override
     public GroupReadDto create(GroupCreateDto groupCreateDto) {
 
-        long statusCode = groupCreateDto.getStatusCode();
+        final Group group = this.groupMapper.toGroup(groupCreateDto);
 
-        final GroupStatus groupStatus = groupStatusRepository.findByCode(statusCode);
-
-        final Group group = groupMapper.toGroup(groupCreateDto);
-        group.setStatus(groupStatus);
+        // set status (foreign key)
+        final Long statusCode = groupCreateDto.getStatusCode();
+        final GroupStatus status = this.groupStatusRepository.getReferenceById(statusCode);
+        group.setStatus(status);
 
         final Timestamp createdAt = Timestamp.from(Instant.now());
         group.setCreatedAt(createdAt);
         group.setUpdatedAt(createdAt);
 
-        final Group createdGroup = groupRepository.save(group);
+        final Group createdGroup = this.groupRepository.save(group);
 
-        return groupMapper.toGroupReadDto(createdGroup);
+        return this.groupMapper.toGroupReadDto(createdGroup);
     }
 
     @Override
     public GroupReadDto findById(long id) {
 
-        final Group group = groupRepository.getReferenceById(id);
+        final Group group = this.groupRepository.getReferenceById(id);
 
-        return groupMapper.toGroupReadDto(group);
+        return this.groupMapper.toGroupReadDto(group);
     }
 
     @Override
-    public GroupReadDto updateById(long id, MessageUpdateDto messageUpdateDto) {
+    public GroupReadDto updateById(long id, GroupUpdateDto groupUpdateDto) {
 
+        final Group currentGroup = this.groupRepository.getReferenceById(id);
 
+        this.groupMapper.updateGroup(groupUpdateDto, currentGroup);
 
-        return null;
+        // update status (foreign key)
+        final Long statusCode = groupUpdateDto.getStatusCode();
+        if (Objects.nonNull(statusCode)) {
+            final GroupStatus groupStatus = this.groupStatusRepository.getGroupStatusByCode(statusCode);
+            currentGroup.setStatus(groupStatus);
+        }
+
+        final Timestamp updatedAt = Timestamp.from(Instant.now());
+        currentGroup.setUpdatedAt(updatedAt);
+
+        final Group updatedGroup = this.groupRepository.save(currentGroup);
+
+        return this.groupMapper.toGroupReadDto(updatedGroup);
     }
 
     @Override
     public GroupReadDto deleteById(long id) {
 
-        final Group group = groupRepository.getReferenceById(id);
+        final Group group = this.groupRepository.getReferenceById(id);
 
-        groupRepository.delete(group);
+        this.groupRepository.delete(group);
 
-        return groupMapper.toGroupReadDto(group);
+        return this.groupMapper.toGroupReadDto(group);
     }
 }

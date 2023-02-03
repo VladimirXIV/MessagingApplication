@@ -1,7 +1,7 @@
 package just.education.group_messaging_app.controller;
 
 import just.education.group_messaging_app.dto.GroupReadDto;
-import just.education.group_messaging_app.dto.MessageUpdateDto;
+import just.education.group_messaging_app.dto.GroupUpdateDto;
 import just.education.group_messaging_app.service.GroupService;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,17 +32,17 @@ public class GroupController {
 
 
     @GetMapping(path = "/{id}")
-    public GroupReadDto findMessageById(@PathVariable("id") final long id) {
+    public GroupReadDto findGroupById(@PathVariable("id") final long id) {
         return this.groupService.findById(id);
     }
 
     @PutMapping(path = "/{id}")
-    public GroupReadDto updateMessage(@PathVariable("id") final long id, @RequestBody MessageUpdateDto messageUpdateDto) {
-        return this.groupService.updateById(id, messageUpdateDto);
+    public GroupReadDto updateGroup(@PathVariable("id") final long id, @RequestBody GroupUpdateDto groupUpdateDto) {
+        return this.groupService.updateById(id, groupUpdateDto);
     }
 
     @DeleteMapping(path = "/{id}")
-    public GroupReadDto deletePostById(@PathVariable("id") final int id) {
+    public GroupReadDto deleteGroupById(@PathVariable("id") final int id) {
         return this.groupService.deleteById(id);
     }
 }

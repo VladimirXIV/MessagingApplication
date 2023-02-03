@@ -1,0 +1,1 @@
+create sequence if not exists group_status_code_sequence increment by 10 start with 500;

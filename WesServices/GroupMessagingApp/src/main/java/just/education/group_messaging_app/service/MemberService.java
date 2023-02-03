@@ -5,6 +5,7 @@ import just.education.group_messaging_app.dto.MemberReadDto;
 import just.education.group_messaging_app.dto.MemberUpdateDto;
 import just.education.group_messaging_app.dto.MessageUpdateDto;
 
+
 public interface MemberService {
 
     public MemberReadDto findById(final long id);

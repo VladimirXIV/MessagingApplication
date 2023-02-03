@@ -7,9 +7,9 @@ import just.education.group_messaging_app.dto.MessageUpdateDto;
 
 public interface MessageService {
 
-    public MessageReadDto findById(final long id);
-
     public MessageReadDto create(MessageCreateDto  messageCreateDto);
+
+    public MessageReadDto findById(final long id);
 
     public MessageReadDto updateById(final long id, MessageUpdateDto messageUpdateDto);
 
