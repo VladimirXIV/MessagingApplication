@@ -5,7 +5,7 @@ create table member
     user_id     bigint,
     role_id     bigint,
     status_code bigint,
-    text        text,
+    text        notes,
     created_at  timestamp,
     updated_at  timestamp,
 

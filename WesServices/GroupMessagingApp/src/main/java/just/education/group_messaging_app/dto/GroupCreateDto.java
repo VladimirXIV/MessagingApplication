@@ -16,8 +16,6 @@ public class GroupCreateDto {
 
     private String metaTitle;
 
-    private String summary;
-
     private Long statusCode;
 
     private String info;

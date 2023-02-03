@@ -1,1 +1,0 @@
-create sequence if not exists message_id_sequence increment by 1 start with 1000;
