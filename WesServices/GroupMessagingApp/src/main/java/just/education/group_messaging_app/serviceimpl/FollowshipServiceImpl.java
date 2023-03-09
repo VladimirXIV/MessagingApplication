@@ -25,8 +25,9 @@ public class FollowshipServiceImpl implements FollowshipService {
     public FollowshipServiceImpl() {
     }
 
-    public FollowshipServiceImpl(FollowshipRepository followshipRepository, FollowshipMapper followshipMapper) {
+    public FollowshipServiceImpl(FollowshipRepository followshipRepository, GroupRepository groupRepository, FollowshipMapper followshipMapper) {
         this.followshipRepository = followshipRepository;
+        this.groupRepository = groupRepository;
         this.followshipMapper = followshipMapper;
     }
 

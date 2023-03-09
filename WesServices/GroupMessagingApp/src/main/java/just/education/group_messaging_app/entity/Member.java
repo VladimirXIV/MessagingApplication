@@ -44,8 +44,8 @@ public class Member {
     private GroupRole role;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "last_status_code", table = "member", referencedColumnName = "code")
-    private MemberStatus last_status;
+    @JoinColumn(name = "status_code", table = "member", referencedColumnName = "code")
+    private MemberStatus status;
 
     @Column(name = "notes")
     private String notes;

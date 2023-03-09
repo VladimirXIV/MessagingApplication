@@ -1,4 +1,72 @@
 insert into
     member (id, group_id, user_id, role_id, status_code, notes, created_at, updated_at)
 values
-    (nextval('member_id_sequence', 100, 102, 300, 700, 'some notes', '2015-09-01T16:34:02', '2015-09-01T16:34:02')
+    (nextval('member_id_sequence'), 100, 100, 300, 700, 'joined 10.Jan.2010', '2010-01-10T02:10:00', '2010-01-10T02:10:00'),
+    (nextval('member_id_sequence'), 100, 102, 310, 700, 'joined 12.Mar.2010', '2010-03-12T06:10:00', '2010-03-12T06:10:00'),
+    (nextval('member_id_sequence'), 100, 104, 320, 700, 'joined 13.Apr.2010', '2010-04-13T07:11:00', '2010-04-13T07:11:00'),
+    (nextval('member_id_sequence'), 100, 106, 320, 700, 'joined 14.May.2010', '2010-05-14T08:12:05', '2010-05-14T08:12:05'),
+    (nextval('member_id_sequence'), 100, 108, 320, 700, 'joined 15.Jun.2010', '2010-06-15T09:13:10', '2010-06-15T09:13:10'),
+    (nextval('member_id_sequence'), 100, 110, 320, 700, 'joined 16.Jul.2010', '2010-07-16T10:14:15', '2010-07-16T10:14:15'),
+    (nextval('member_id_sequence'), 100, 112, 320, 700, 'joined 17.Aug.2010', '2010-08-17T11:15:20', '2010-08-17T11:15:20'),
+
+    (nextval('member_id_sequence'), 102, 110, 300, 700, 'joined 11.Feb.2011', '2011-02-11T04:15:00', '2011-02-11T04:15:00'),
+    (nextval('member_id_sequence'), 102, 112, 310, 700, 'joined 16.Apr.2011', '2011-04-16T06:24:05', '2011-04-16T06:24:05'),
+    (nextval('member_id_sequence'), 102, 114, 320, 700, 'joined 17.May.2011', '2011-05-17T07:29:10', '2011-05-17T07:29:10'),
+    (nextval('member_id_sequence'), 102, 116, 320, 700, 'joined 18.Jun.2011', '2011-06-18T08:34:15', '2011-06-18T08:34:15'),
+    (nextval('member_id_sequence'), 102, 118, 320, 700, 'joined 19.Jul.2011', '2011-07-19T09:39:20', '2011-07-19T09:39:20'),
+
+    (nextval('member_id_sequence'), 104, 100, 300, 700, 'joined 12.Mar.2012', '2012-03-12T06:20:00', '2012-03-12T06:20:00'),
+    (nextval('member_id_sequence'), 104, 102, 310, 700, 'joined 16.May.2012', '2012-05-16T11:29:10', '2012-05-16T11:29:10'),
+    (nextval('member_id_sequence'), 104, 104, 320, 700, 'joined 17.Jun.2012', '2012-06-17T12:39:25', '2012-06-17T12:39:25'),
+    (nextval('member_id_sequence'), 104, 106, 320, 700, 'joined 18.Jul.2012', '2012-07-18T13:49:40', '2012-07-18T13:49:40'),
+
+    (nextval('member_id_sequence'), 106, 108, 300, 700, 'joined 13.Apr.2013', '2013-04-13T08:25:00', '2013-04-13T08:25:00'),
+    (nextval('member_id_sequence'), 106, 110, 310, 700, 'joined 16.Jun.2013', '2013-06-16T11:14:05', '2013-06-16T11:14:05'),
+    (nextval('member_id_sequence'), 106, 112, 320, 700, 'joined 17.Jul.2013', '2013-07-17T12:19:10', '2013-07-17T12:19:10'),
+    (nextval('member_id_sequence'), 106, 114, 320, 700, 'joined 18.Aug.2013', '2013-08-18T13:24:15', '2013-08-18T13:24:15'),
+    (nextval('member_id_sequence'), 106, 116, 320, 700, 'joined 19.Sep.2013', '2013-09-19T14:29:20', '2013-09-19T14:29:20'),
+    (nextval('member_id_sequence'), 106, 118, 320, 700, 'joined 20.Oct.2013', '2013-10-20T15:34:25', '2013-10-20T15:34:25'),
+
+    (nextval('member_id_sequence'), 108, 100, 300, 700, 'joined 14.May.2014', '2014-05-14T10:30:00', '2014-05-14T10:30:00'),
+    (nextval('member_id_sequence'), 108, 102, 310, 700, 'joined 16.Jul.2014', '2014-07-16T12:01:10', '2014-07-16T12:01:10'),
+    (nextval('member_id_sequence'), 108, 104, 320, 700, 'joined 17.Aug.2014', '2014-08-17T13:02:10', '2014-08-17T13:02:10'),
+    (nextval('member_id_sequence'), 108, 106, 320, 700, 'joined 18.Sep.2014', '2014-09-18T14:03:15', '2014-09-18T14:03:15'),
+    (nextval('member_id_sequence'), 108, 108, 320, 700, 'joined 19.Oct.2014', '2014-10-19T15:04:20', '2014-10-19T15:04:20'),
+    (nextval('member_id_sequence'), 108, 110, 320, 700, 'joined 20.Nov.2014', '2014-11-20T16:05:25', '2014-11-20T16:05:25'),
+
+    (nextval('member_id_sequence'), 110, 110, 300, 700, 'joined 15.Jun.2015', '2015-06-15T12:35:00', '2015-06-15T12:35:00'),
+    (nextval('member_id_sequence'), 110, 112, 310, 700, 'joined 17.Aug.2015', '2015-08-17T16:41:05', '2015-08-17T16:41:05'),
+    (nextval('member_id_sequence'), 110, 114, 320, 700, 'joined 18.Sep.2015', '2015-09-18T17:43:10', '2015-09-18T17:43:10'),
+    (nextval('member_id_sequence'), 110, 116, 320, 700, 'joined 19.Oct.2015', '2015-10-19T18:45:15', '2015-10-19T18:45:15'),
+    (nextval('member_id_sequence'), 110, 118, 320, 700, 'joined 20.Nov.2015', '2015-11-20T19:47:20', '2015-11-20T19:47:20'),
+
+    (nextval('member_id_sequence'), 112, 100, 300, 700, 'joined 16.Jul.2016', '2016-07-16T14:40:00', '2016-07-16T14:40:00'),
+    (nextval('member_id_sequence'), 112, 102, 310, 700, 'joined 21.Oct.2016', '2016-10-21T17:09:10', '2016-10-21T17:09:10'),
+    (nextval('member_id_sequence'), 112, 104, 320, 700, 'joined 22.Nov.2016', '2016-11-22T18:14:15', '2016-11-22T18:14:15'),
+    (nextval('member_id_sequence'), 112, 106, 320, 700, 'joined 23.Nov.2016', '2016-11-23T19:19:20', '2016-11-23T19:19:20'),
+    (nextval('member_id_sequence'), 112, 108, 320, 700, 'joined 24.Dec.2016', '2016-12-24T20:24:25', '2016-12-24T20:24:25'),
+    (nextval('member_id_sequence'), 112, 110, 320, 700, 'joined 25.Dec.2016', '2016-12-25T21:29:30', '2016-12-25T21:29:30'),
+
+    (nextval('member_id_sequence'), 114, 100, 300, 700, 'joined 17.Aug.2017', '2017-08-17T16:45:00', '2017-08-17T16:45:00'),
+    (nextval('member_id_sequence'), 114, 102, 310, 700, 'joined 19.Oct.2017', '2017-10-19T18:04:10', '2017-10-19T18:04:10'),
+    (nextval('member_id_sequence'), 114, 104, 320, 700, 'joined 20.Oct.2017', '2017-10-20T18:59:15', '2017-10-20T18:59:15'),
+    (nextval('member_id_sequence'), 114, 106, 320, 700, 'joined 21.Oct.2017', '2017-10-21T20:04:20', '2017-10-21T20:04:20'),
+    (nextval('member_id_sequence'), 114, 108, 320, 700, 'joined 22.Nov.2017', '2017-11-22T20:59:25', '2017-11-22T20:59:25'),
+    (nextval('member_id_sequence'), 114, 110, 320, 700, 'joined 23.Nov.2017', '2017-11-23T22:04:30', '2017-11-23T22:04:30'),
+    (nextval('member_id_sequence'), 114, 112, 320, 700, 'joined 24.Dec.2017', '2017-12-24T22:59:35', '2017-12-24T22:59:35'),
+
+    (nextval('member_id_sequence'), 116, 100, 300, 700, 'joined 18.Sep.2018', '2018-09-18T18:50:00', '2018-09-18T18:50:00'),
+    (nextval('member_id_sequence'), 116, 102, 310, 700, 'joined 19.Oct.2018', '2018-10-19T20:14:05', '2018-10-19T20:14:05'),
+    (nextval('member_id_sequence'), 116, 104, 320, 700, 'joined 20.Oct.2018', '2018-10-20T21:19:15', '2018-10-20T21:19:15'),
+    (nextval('member_id_sequence'), 116, 106, 320, 700, 'joined 21.Nov.2018', '2018-11-21T22:24:25', '2018-11-21T22:24:25'),
+    (nextval('member_id_sequence'), 116, 108, 320, 700, 'joined 22.Nov.2018', '2018-11-22T23:29:35', '2018-11-22T23:29:35'),
+    (nextval('member_id_sequence'), 116, 110, 320, 700, 'joined 23.Dec.2018', '2018-12-23T23:39:45', '2018-12-23T23:39:45'),
+    (nextval('member_id_sequence'), 116, 112, 320, 700, 'joined 24.Dec.2018', '2018-12-24T23:49:50', '2018-12-24T23:49:50'),
+
+    (nextval('member_id_sequence'), 118, 100, 300, 700, 'joined 19.Oct.2019', '2019-10-19T20:00:00', '2019-10-19T20:00:00'),
+    (nextval('member_id_sequence'), 118, 102, 310, 700, 'joined 21.Nov.2019', '2019-11-21T21:09:00', '2019-11-21T21:09:00'),
+    (nextval('member_id_sequence'), 118, 104, 320, 700, 'joined 22.Nov.2019', '2019-11-22T22:14:05', '2019-11-22T22:14:05'),
+    (nextval('member_id_sequence'), 118, 106, 320, 700, 'joined 23.Dec.2019', '2019-12-23T22:19:10', '2019-12-23T22:19:10'),
+    (nextval('member_id_sequence'), 118, 108, 320, 700, 'joined 24.Dec.2019', '2019-12-24T23:24:15', '2019-12-24T23:24:15'),
+    (nextval('member_id_sequence'), 118, 110, 320, 700, 'joined 25.Dec.2019', '2019-12-25T23:29:20', '2019-12-25T23:29:20'),
+    (nextval('member_id_sequence'), 118, 112, 320, 700, 'joined 26.Dec.2019', '2019-12-26T23:34:25', '2019-12-26T23:34:25');

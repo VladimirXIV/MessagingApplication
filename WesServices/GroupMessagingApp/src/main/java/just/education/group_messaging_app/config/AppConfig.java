@@ -38,7 +38,11 @@ import just.education.group_messaging_app.serviceimpl.FollowshipServiceImpl;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 
 
 @Configuration
@@ -129,9 +133,9 @@ public class AppConfig {
     }
 
     @Bean
-    public FollowshipService followshipService(FollowshipRepository followshipRepository, FollowshipMapper followshipMapper) {
+    public FollowshipService followshipService(FollowshipRepository followshipRepository, GroupRepository groupRepository, FollowshipMapper followshipMapper) {
 
-        return new FollowshipServiceImpl(followshipRepository, followshipMapper);
+        return new FollowshipServiceImpl(followshipRepository, groupRepository, followshipMapper);
     }
 
     @Bean

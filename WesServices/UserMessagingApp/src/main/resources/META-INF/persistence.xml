@@ -23,8 +23,8 @@
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5454/users" />
-            <property name="javax.persistence.jdbc.user" value="db_root" />
-            <property name="javax.persistence.jdbc.password" value="db_root" />
+            <property name="javax.persistence.jdbc.user" value="user_dev" />
+            <property name="javax.persistence.jdbc.password" value="user_dev" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update" />
             <property name="hibernate.show_sql" value="true" />

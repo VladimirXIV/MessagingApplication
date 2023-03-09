@@ -5,22 +5,14 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
-import java.sql.Timestamp;
-
 
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GroupUpdateDto {
+public class GroupTypeDto {
 
-    private String title;
+    private Long id;
 
-    private String metaTitle;
-
-    private String description;
-
-    private Long statusId;
-
-    private Long statusCode;
+    private String name;
 }

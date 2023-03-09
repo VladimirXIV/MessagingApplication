@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Setter
 @Getter
@@ -20,17 +22,19 @@ public class GroupReadDto {
 
     private String metaTitle;
 
-    private String summary;
+    private String description;
+
+    private GroupTypeDto type;
 
     private GroupStatusDto status;
-
-    private String info;
 
     private Long createdBy;
 
     private Long updatedBy;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private Timestamp createdAt;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private Timestamp updatedAt;
 }

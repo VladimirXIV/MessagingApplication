@@ -2,8 +2,8 @@ create table post
 (
     id         bigint not null,
     group_id   bigint not null,
-    user_id    varchar(500),
-    text       varchar(500),
+    user_id    bigint,
+    text       varchar(1000),
     created_at timestamp,
     updated_at timestamp,
 

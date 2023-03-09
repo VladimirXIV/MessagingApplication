@@ -13,6 +13,7 @@ import just.education.group_messaging_app.repository.GroupStatusRepository;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Objects;
+import java.util.Optional;
 
 
 public class GroupServiceImpl implements GroupService {
@@ -54,7 +55,7 @@ public class GroupServiceImpl implements GroupService {
     @Override
     public GroupReadDto findById(long id) {
 
-        final Group group = this.groupRepository.getReferenceById(id);
+        final Group group = this.groupRepository.findById(id).orElse(null);
 
         return this.groupMapper.toGroupReadDto(group);
     }

@@ -1,0 +1,44 @@
+server.port: 9095
+
+---
+spring:
+
+  config:
+    activate:
+      on-profile: dev
+
+  # Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    jdbcUrl: jdbc:postgresql://localhost:5454/groups
+    username: group_dev
+    password: group_dev
+
+  # JPA properties
+  jpa:
+    database-platform: org.hibernate.dialect.ProgressDialect
+    database: postgresql
+    openInView: false
+    show_sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.cache.use_second_level_cache: true
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: true
+      hibernate.cache.region.factory_class: org.hibernate.cache.internal.NoCachingRegionFactory
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate.connection.initial_pool_size: 0
+
+entitymanager:
+  packages: "just.education.group_messaging_app.entity"
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    password: 'password'
+    url: jdbc:h2:staging
+    username: SA

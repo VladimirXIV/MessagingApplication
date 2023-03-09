@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Setter
 @Getter
@@ -26,7 +28,9 @@ public class MemberReadDto {
 
     private String notes;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" ,timezone="IST")
     private Timestamp createdAt;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" ,timezone="IST")
     private Timestamp updatedAt;
 }

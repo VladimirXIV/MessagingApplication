@@ -32,5 +32,6 @@ public class GroupRole {
     @SequenceGenerator(name = "group_role_id_seq", sequenceName = "group_role_id_sequence", schema = "group_schema", allocationSize = 1)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 }

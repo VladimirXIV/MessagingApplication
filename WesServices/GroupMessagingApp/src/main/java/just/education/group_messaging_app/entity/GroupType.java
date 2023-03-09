@@ -30,5 +30,6 @@ public class GroupType {
     @SequenceGenerator(name = "group_type_id_seq", sequenceName = "group_type_id_sequence", schema = "group_schema", allocationSize = 1)
     private Long id;
 
-    private String type;
+    @Column(name = "name")
+    private String name;
 }

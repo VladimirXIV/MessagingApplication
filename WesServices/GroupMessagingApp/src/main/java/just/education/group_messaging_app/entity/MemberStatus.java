@@ -32,5 +32,6 @@ public class MemberStatus {
     @SequenceGenerator(name = "member_status_code_seq", sequenceName = "member_status_code_sequence", schema = "group_schema", allocationSize = 1)
     private Long code;
 
+    @Column(name = "name")
     private String name;
 }

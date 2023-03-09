@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -21,7 +24,9 @@ public class PostReadDto {
 
     private String text;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private Timestamp createdAt;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private Timestamp updatedAt;
 }

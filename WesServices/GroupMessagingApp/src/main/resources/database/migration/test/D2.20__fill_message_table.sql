@@ -1,68 +1,72 @@
 insert into
-    message(id, group_id, user_id, created_at, updated_at, text)
+    message (id, group_id, user_id, created_at, updated_at, text)
 values
-    (nextval('message_id_sequence'), 100, 100, '2010-01-05T02:10:00', '2015-09-01T16:34:02', 'Hi there, my name is James!'),
-    (nextval('message_id_sequence'), 100, 102, '2010-02-10T02:10:00', '2015-09-01T16:34:02', 'Hi there, my name is Tobias!'),
-    (nextval('message_id_sequence'), 100, 104, '2012-02-15T02:10:00', '2015-09-01T16:34:02', 'Hi there, my name is Kirsten!'),
-    (nextval('message_id_sequence'), 100, 106, '2012-03-20T02:10:00', '2015-09-01T16:34:02', 'Hi there, my name is Alfred!'),
-    (nextval('message_id_sequence'), 100, 108, '2014-03-10T02:10:00', '2015-09-01T16:34:02', 'Hi there, my name is William!'),
+    (nextval('message_id_sequence'), 100, 100, '2010-01-10T02:10:50', '2010-01-10T02:10:50', 'Hi there, my name is James!'),
+    (nextval('message_id_sequence'), 100, 102, '2010-03-12T06:11:00', '2010-03-12T06:11:00', 'Hi there, my name is Tobias!'),
+    (nextval('message_id_sequence'), 100, 104, '2010-04-13T07:12:05', '2010-04-13T07:12:05', 'Hi there, my name is Kirsten!'),
+    (nextval('message_id_sequence'), 100, 106, '2010-05-14T08:13:10', '2010-05-14T08:13:10', 'Hi there, my name is Alfred!'),
+    (nextval('message_id_sequence'), 100, 108, '2010-06-15T09:14:15', '2010-06-15T09:14:15', 'Hi there, my name is William!'),
+    (nextval('message_id_sequence'), 100, 110, '2010-07-16T10:15:20', '2010-07-16T10:15:20', 'Hi there, my name is Rosemary!'),
+    (nextval('message_id_sequence'), 100, 112, '2010-08-17T11:16:25', '2010-08-17T11:16:25', 'Hi there, my name is Jonathan!'),
 
-    (nextval('message_id_sequence'), 102, 110, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Glad to see! My name is Rosemary'),
-    (nextval('message_id_sequence'), 102, 112, '2011-02-01T16:34:02', '2018-03-01T16:34:03', 'Glad to see! My name is Jonathan'),
-    (nextval('message_id_sequence'), 102, 114, '2015-10-01T13:34:04', '2017-07-01T14:14:04', 'Glad to see! My name is Bryce'),
-    (nextval('message_id_sequence'), 102, 116, '2011-11-01T13:14:04', '2012-02-01T14:54:04', 'Glad to see! My name is Mageina'),
-    (nextval('message_id_sequence'), 102, 118, '2015-10-06T11:14:01', '2018-03-03T18:54:09', 'Glad to see! My name is Ilya'),
+    (nextval('message_id_sequence'), 102, 110, '2011-02-11T04:15:45', '2011-02-11T04:15:45', 'Glad to see! My name is Rosemary'),
+    (nextval('message_id_sequence'), 102, 112, '2011-04-16T06:25:10', '2011-04-16T06:25:10', 'Glad to see! My name is Jonathan'),
+    (nextval('message_id_sequence'), 102, 114, '2011-05-17T07:30:15', '2011-05-17T07:30:15', 'Glad to see! My name is Bryce'),
+    (nextval('message_id_sequence'), 102, 116, '2011-06-18T08:35:20', '2011-06-18T08:35:20', 'Glad to see! My name is Mageina'),
+    (nextval('message_id_sequence'), 102, 118, '2011-07-19T09:40:25', '2011-07-19T09:40:25', 'Glad to see! My name is Ilya'),
 
-    (nextval('message_id_sequence'), 104, 100, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hey! It is me, James!'),
-    (nextval('message_id_sequence'), 104, 102, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hey! It is me, Tobias!'),
-    (nextval('message_id_sequence'), 104, 104, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hey! It is me, Kirsten!'),
-    (nextval('message_id_sequence'), 104, 106, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hey! It is me, Alfred!'),
-    (nextval('message_id_sequence'), 104, 108, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hey! It is me, William!'),
+    (nextval('message_id_sequence'), 104, 100, '2012-03-12T06:20:40', '2012-03-12T06:20:40', 'Hey! It is me, James!'),
+    (nextval('message_id_sequence'), 104, 102, '2012-05-16T11:30:15', '2012-05-16T11:30:15', 'Hey! It is me, Tobias!'),
+    (nextval('message_id_sequence'), 104, 104, '2012-06-17T12:40:30', '2012-06-17T12:40:30', 'Hey! It is me, Kirsten!'),
+    (nextval('message_id_sequence'), 104, 106, '2012-07-18T13:50:45', '2012-07-18T13:50:45', 'Hey! It is me, Alfred!'),
 
-    (nextval('message_id_sequence'), 106, 110, '2015-10-06T11:14:01', '2018-03-03T18:54:09', 'Hello, everyone! Rosemary is here!'),
-    (nextval('message_id_sequence'), 106, 112, '2011-11-01T13:14:04', '2012-02-01T14:54:04', 'Hello, everyone! Jonathan is here!'),
-    (nextval('message_id_sequence'), 106, 114, '2015-10-01T13:34:04', '2017-07-01T14:14:04', 'Hello, everyone! Bryce is here!'),
-    (nextval('message_id_sequence'), 106, 116, '2011-02-01T16:34:02', '2018-03-01T16:34:03', 'Hello, everyone! Mageina is here!'),
-    (nextval('message_id_sequence'), 106, 118, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hello, everyone! Ilya is here!'),
+    (nextval('message_id_sequence'), 106, 108, '2013-04-13T08:25:55', '2013-04-13T08:25:55', 'Hello, everyone! William is here!'),
+    (nextval('message_id_sequence'), 106, 110, '2013-06-16T11:15:10', '2013-06-16T11:15:10', 'Hello, everyone! Rosemary is here!'),
+    (nextval('message_id_sequence'), 106, 112, '2013-07-17T12:20:15', '2013-07-17T12:20:15', 'Hello, everyone! Jonathan is here!'),
+    (nextval('message_id_sequence'), 106, 114, '2013-08-18T13:25:20', '2013-08-18T13:25:20', 'Hello, everyone! Bryce is here!'),
+    (nextval('message_id_sequence'), 106, 116, '2013-09-19T14:30:25', '2013-09-19T14:30:25', 'Hello, everyone! Mageina is here!'),
+    (nextval('message_id_sequence'), 106, 118, '2013-10-20T15:35:30', '2013-10-20T15:35:30', 'Hello, everyone! Ilya is here!'),
 
-    (nextval('message_id_sequence'), 108, 100, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hey, glad to see everyone! I am James'),
-    (nextval('message_id_sequence'), 108, 102, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hey, glad to see everyone! I am Tobias'),
-    (nextval('message_id_sequence'), 108, 104, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hey, glad to see everyone! I am Kirsten'),
-    (nextval('message_id_sequence'), 108, 106, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hey, glad to see everyone! I am Alfred'),
-    (nextval('message_id_sequence'), 108, 108, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Hey, glad to see everyone! I am William'),
+    (nextval('message_id_sequence'), 108, 100, '2014-05-14T10:30:40', '2014-05-14T10:30:40', 'Hey, glad to see everyone! I am James'),
+    (nextval('message_id_sequence'), 108, 102, '2014-07-16T12:02:10', '2014-07-16T12:02:10', 'Hey, glad to see everyone! I am Tobias'),
+    (nextval('message_id_sequence'), 108, 104, '2014-08-17T13:03:15', '2014-08-17T13:03:15', 'Hey, glad to see everyone! I am Kirsten'),
+    (nextval('message_id_sequence'), 108, 106, '2014-09-18T14:04:20', '2014-09-18T14:04:20', 'Hey, glad to see everyone! I am Alfred'),
+    (nextval('message_id_sequence'), 108, 108, '2014-10-19T15:05:25', '2014-10-19T15:05:25', 'Hey, glad to see everyone! I am William'),
+    (nextval('message_id_sequence'), 108, 110, '2014-11-20T16:06:30', '2014-11-20T16:06:30', 'Hey, glad to see everyone! I am Rosemary'),
 
-    (nextval('message_id_sequence'), 110, 110, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Good day! Nice to see everyone! My name is Rosemary'),
-    (nextval('message_id_sequence'), 110, 112, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Good day! Nice to see everyone! My name is Tobias'),
-    (nextval('message_id_sequence'), 110, 114, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Good day! Nice to see everyone! My name is Kirsten'),
-    (nextval('message_id_sequence'), 110, 116, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Good day! Nice to see everyone! My name is Alfred'),
-    (nextval('message_id_sequence'), 110, 118, '2015-09-01T16:34:02', '2015-09-01T16:34:02', 'Good day! Nice to see everyone! My name is William'),
+    (nextval('message_id_sequence'), 110, 110, '2015-06-15T12:35:50', '2015-06-15T12:35:50', 'Good day! Nice to see everyone! My name is Rosemary'),
+    (nextval('message_id_sequence'), 110, 112, '2015-08-17T16:42:10', '2015-08-17T16:42:10', 'Good day! Nice to see everyone! My name is Jonathan'),
+    (nextval('message_id_sequence'), 110, 114, '2015-09-18T17:44:15', '2015-09-18T17:44:15', 'Good day! Nice to see everyone! My name is Bryce'),
+    (nextval('message_id_sequence'), 110, 116, '2015-10-19T18:46:20', '2015-10-19T18:46:20', 'Good day! Nice to see everyone! My name is Mageina'),
+    (nextval('message_id_sequence'), 110, 118, '2015-11-20T19:48:25', '2015-11-20T19:48:25', 'Good day! Nice to see everyone! My name is Ilya'),
 
+    (nextval('message_id_sequence'), 112, 100, '2016-07-16T14:40:50', '2016-07-16T14:40:50', 'So, hi everyone! It is James! And thanks for having me!'),
+    (nextval('message_id_sequence'), 112, 102, '2016-10-21T17:10:15', '2016-10-21T17:10:15', 'So, hi everyone! It is Tobias! And thanks for having me!'),
+    (nextval('message_id_sequence'), 112, 104, '2016-11-22T18:15:20', '2016-11-22T18:15:20', 'So, hi everyone! It is Kirsten! And thanks for having me!'),
+    (nextval('message_id_sequence'), 112, 106, '2016-11-23T19:20:25', '2016-11-23T19:20:25', 'So, hi everyone! It is Alfred! And thanks for having me!'),
+    (nextval('message_id_sequence'), 112, 108, '2016-12-24T20:25:30', '2016-12-24T20:25:30', 'So, hi everyone! It is William! And thanks for having me!'),
+    (nextval('message_id_sequence'), 112, 110, '2016-12-25T21:30:35', '2016-12-25T21:30:35', 'So, hi everyone! It is Rosemary! And thanks for having me!'),
 
-    (nextval('message_id_sequence'), 100, 100, '2015-09-01T16:34:02', '2015-09-01T16:34:02', ' '),
-    (nextval('message_id_sequence'), 100, 102, '2015-09-01T16:34:02', '2015-09-01T16:34:02', ' '),
-    (nextval('message_id_sequence'), 100, 104, '2015-09-01T16:34:02', '2015-09-01T16:34:02', ' '),
-    (nextval('message_id_sequence'), 100, 106, '2015-09-01T16:34:02', '2015-09-01T16:34:02', ' '),
-    (nextval('message_id_sequence'), 100, 108, '2015-09-01T16:34:02', '2015-09-01T16:34:02', ' '),
+    (nextval('message_id_sequence'), 114, 100, '2017-08-17T16:45:55', '2017-08-17T16:45:55', 'Oh, hi! I am James'),
+    (nextval('message_id_sequence'), 114, 102, '2017-10-19T18:05:15', '2017-10-19T18:05:15', 'Oh, hi! I am Tobias'),
+    (nextval('message_id_sequence'), 114, 104, '2017-10-20T19:00:20', '2017-10-20T19:00:20', 'Oh, hi! I am Kirsten'),
+    (nextval('message_id_sequence'), 114, 106, '2017-10-21T20:05:25', '2017-10-21T20:05:25', 'Oh, hi! I am Alfred'),
+    (nextval('message_id_sequence'), 114, 108, '2017-11-22T21:00:30', '2017-11-22T21:00:30', 'Oh, hi! I am William'),
+    (nextval('message_id_sequence'), 114, 110, '2017-11-23T22:05:35', '2017-11-23T22:05:35', 'Oh, hi! I am Rosemary'),
+    (nextval('message_id_sequence'), 114, 112, '2017-12-24T23:00:40', '2017-12-24T23:00:40', 'Oh, hi! I am Jonathan'),
 
-    100  James',    'Edward',      'Franco',  'Harry Osborn',            '2000-01-01T10:01:00', '2020-01-11T00:50:00'
-    102 'Tobias',   'Vincent',     'Maguire', 'Peter Parker',            '2000-01-02T11:02:00', '2020-01-12T01:51:00'
-    104 'Kirsten',  'Caroline',    'Dunst',   'Mary Jane',               '2001-02-03T12:03:00', '2020-02-13T02:52:00'
-    106 'Alfred',   'Esteban',     'Molina',  'Otto Gunther Octavius'    '2001-02-04T13:04:00', '2020-02-14T03:53:00'
-    108 'William',  'James',       'Dafoe',   'Norman Osborn',           '2003-03-05T14:05:00', '2021-03-15T04:54:00'
-    110 'Rosemary', 'Ann',         'Harris',  'May Parker',              '2003-03-06T15:06:30', '2021-03-16T05:55:30'
-    112 'Jonathan', 'Kimble',      'Simmons', 'J. Jonah Jameson',        '2004-04-07T16:07:30', '2021-04-17T06:56:30'
-    114 'Bryce',    'Dallas',      'Howard',  'Gwen Stacy',              '2005-05-08T17:08:40', '2021-05-18T07:57:40'
-    116 'Mageina',  'Tovah',       'Begtrup', 'Ursula Ditkovich',        '2006-06-09T18:09:40', '2021-06-19T08:58:40'
-    118 'Ilya',     'Zalmanovich', 'Baskin',  'Mister Ditkovich',        '2007-07-10T19:10:50', '2021-07-20T09:59:50'
+    (nextval('message_id_sequence'), 116, 100, '2018-09-18T18:50:35', '2018-09-18T18:50:35', 'Hello, hi, hi, I am James!'),
+    (nextval('message_id_sequence'), 116, 102, '2018-10-19T20:15:10', '2018-10-19T20:15:10', 'Hello, hi, hi, I am Tobias!'),
+    (nextval('message_id_sequence'), 116, 104, '2018-10-20T21:20:20', '2018-10-20T21:20:20', 'Hello, hi, hi, I am Kirsten!'),
+    (nextval('message_id_sequence'), 116, 106, '2018-11-21T22:25:30', '2018-11-21T22:25:30', 'Hello, hi, hi, I am Alfred!'),
+    (nextval('message_id_sequence'), 116, 108, '2018-11-22T23:30:40', '2018-11-22T23:30:40', 'Hello, hi, hi, I am William!'),
+    (nextval('message_id_sequence'), 116, 110, '2018-12-23T23:40:50', '2018-12-23T23:40:50', 'Hello, hi, hi, I am Rosemary!'),
+    (nextval('message_id_sequence'), 116, 112, '2018-12-24T23:50:55', '2018-12-24T23:50:55', 'Hello, hi, hi, I am Jonathan!'),
 
-
-    100 500, 102, 102, '2010-01-10T02:10:00', '2010-01-10T02:10:00', 'American muscle cars',          'The most amazing "muscle cars community" ever.',                             'This group is all about muscle cars. Feel free to post pics of your own muscle cars. For many of us, classic muscle cars hold a special place in our hearts. If you love classic muscle cars as we do then you are in the right place!'),
-    102 500, 104, 110, '2011-02-11T04:15:00', '2011-02-11T04:15:00', 'Aircraft for sale',             'Here you can post details of the aircraft you sell or you are looking for.', 'This group to showcase your aircraft or helicopter that you are trying to sell. Avionics and aircraft parts are not accepted.'),
-    104 500, 106, 112, '2012-03-12T06:20:00', '2012-03-12T06:20:00', 'Aviation jobs & careers',       'All the best for your dream flying job!',                                    'The purpose of this group is to share information about job opportunities, chat about aviation related subjects and to meet other people from all over the world in the aviation business. Anyone can start a topic or share photos, but please be polite.'),
-    106, 510, 108, 106, '2013-04-13T08:25:00', '2013-04-13T08:25:00', 'Crossfit friends community',    'Get all your crossfit news!',                                                'This group is for passing along information to all members, including scheduling updates and gym news. Feel free to pass along info that our other members will love too, but good vibes only!'),
-    108, 500, 108, 110, '2014-05-14T10:30:00', '2014-05-14T10:30:00', 'Ship lovers',                   'We just love ships!',                                                        'A place for everyone who loves the sea or works in the sea. Join and share your photos and your stories!'),
-    110 500, 110, 110, '2015-06-15T12:35:00', '2015-06-15T12:35:00', 'Cats of the world',             'This is a place to share our love of cats of all kinds!',                    'Welcome to cat for love group! Cute cats, cute kittens!'),
-    112, 520, 112, 110, '2016-07-16T14:40:00', '2016-07-16T14:40:00', 'I love my dogs',                'We love dogs!',                                                              'A fun and friendly page to share pictures and stories of your fur babies. We are all here to share our experiences with our furry friends.'),
-    116 500, 112, 110, '2017-08-17T16:45:00', '2017-08-17T16:45:00', 'Geography knowledge',           'Place that we all can learn about geography of the world!',                  'This group is ideally for geographers and historians who are deeply interested in teaching others.'),
-    118 500, 114, 110, '2018-09-18T18:50:00', '2018-09-18T18:50:00', 'Classical culture and history', 'For lovers of history and civilizations.',                                   'This group has been set up to encourage discussion of the classical world. It focuses upon the classical period, mainly Athenian, early and late Roman republican period and early Roman imperial period.'),
-    120 500, 116, 110, '2019-10-19T20:00:00', '2019-10-19T20:00:00', 'German history and culture',
+    (nextval('message_id_sequence'), 118, 100, '2019-10-19T20:00:40', '2019-10-19T20:00:40', 'Hello! How are you? I am James'),
+    (nextval('message_id_sequence'), 118, 102, '2019-11-21T21:10:05', '2019-11-21T21:10:05', 'Hello! How are you? I am Tobias'),
+    (nextval('message_id_sequence'), 118, 104, '2019-11-22T22:15:10', '2019-11-22T22:15:10', 'Hello! How are you? I am Kirsten'),
+    (nextval('message_id_sequence'), 118, 106, '2019-12-23T22:20:15', '2019-12-23T22:20:15', 'Hello! How are you? I am Alfred'),
+    (nextval('message_id_sequence'), 118, 108, '2019-12-24T23:25:20', '2019-12-24T23:25:20', 'Hello! How are you? I am William'),
+    (nextval('message_id_sequence'), 118, 110, '2019-12-25T23:30:25', '2019-12-25T23:30:25', 'Hello! How are you? I am Rosemary'),
+    (nextval('message_id_sequence'), 118, 112, '2019-12-26T23:35:30', '2019-12-26T23:35:30', 'Hello! How are you? I am Jonathan');

@@ -1,0 +1,1 @@
+create sequence if not exists group_type_id_sequence increment by 10 start with 800;

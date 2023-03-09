@@ -30,5 +30,6 @@ public class GroupStatus {
     @SequenceGenerator(name = "group_status_code_seq", sequenceName = "group_status_code_sequence", schema = "group_schema", allocationSize = 1)
     private Long code;
 
+    @Column(name = "name")
     private String name;
 }

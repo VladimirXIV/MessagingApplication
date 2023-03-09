@@ -20,15 +20,15 @@ public interface GroupMapper {
 
     @Mapping(source = "title", target = "title")
     @Mapping(source = "metaTitle", target = "metaTitle")
-    @Mapping(source = "summary", target = "summary")
-    @Mapping(source = "info", target = "info")
+    @Mapping(source = "description", target = "description")
     public Group toGroup(GroupCreateDto createDto);
 
     @Mapping(source = "id", target = "id")
     @Mapping(source = "title", target = "title")
     @Mapping(source = "metaTitle", target = "metaTitle")
-    @Mapping(source = "summary", target = "summary")
-    @Mapping(source = "info", target = "info")
+    @Mapping(source = "description", target = "description")
+    @Mapping(source = "type.id", target = "type.id")
+    @Mapping(source = "type.name", target = "type.name")
     @Mapping(source = "status.code", target = "status.code")
     @Mapping(source = "status.name", target = "status.name")
     @Mapping(source = "createdBy", target = "createdBy")
@@ -39,7 +39,6 @@ public interface GroupMapper {
 
     @Mapping(source = "title", target = "title", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(source = "metaTitle", target = "metaTitle", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    @Mapping(source = "summary", target = "summary", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    @Mapping(source = "info", target = "info", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(source = "description", target = "description", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     public void updateGroup(GroupUpdateDto groupUpdateDto, @MappingTarget Group group);
 }
