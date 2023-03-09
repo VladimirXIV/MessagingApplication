@@ -14,26 +14,25 @@ import javax.sql.DataSource;
 @Configuration
 public class JpaConfig {
 
-    @Value(value = "${entitymanager.packages}")
-    private String PROP_ENTITYMANAGER_PACKAGES_TO_SCAN;
-
     @Bean(name = "dataSource")
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean
+    @Bean(name = "jpaProperties")
     public JpaProperties jpaProperties() {
         return new JpaProperties();
     }
 
     @Bean(name = "entityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, JpaProperties jpaProperties) {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(
+            @Value(value = "${entitymanager.packages}") String propEntityManagerPackagesToScan,
+            DataSource dataSource,
+            JpaProperties jpaProperties) {
 
         LocalContainerEntityManagerFactoryBean lemfb = new LocalContainerEntityManagerFactoryBean();
-        lemfb.setPackagesToScan(this.PROP_ENTITYMANAGER_PACKAGES_TO_SCAN);
-
+        lemfb.setPackagesToScan(propEntityManagerPackagesToScan);
 
         HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
         lemfb.setJpaVendorAdapter(hibernateJpaVendorAdapter);
