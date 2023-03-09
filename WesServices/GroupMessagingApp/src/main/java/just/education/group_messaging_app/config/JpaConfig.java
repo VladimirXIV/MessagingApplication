@@ -10,6 +10,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import javax.sql.DataSource;
+import java.util.Objects;
 
 @Configuration
 public class JpaConfig {
@@ -27,18 +28,18 @@ public class JpaConfig {
 
     @Bean(name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(
-            @Value(value = "${entitymanager.packages}") String propEntityManagerPackagesToScan,
+            @Value(value = "${entitymanager.packages}") String packagesToScan,
             DataSource dataSource,
             JpaProperties jpaProperties) {
 
         LocalContainerEntityManagerFactoryBean lemfb = new LocalContainerEntityManagerFactoryBean();
-        lemfb.setPackagesToScan(propEntityManagerPackagesToScan);
+        lemfb.setPackagesToScan(packagesToScan);
 
         HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
         lemfb.setJpaVendorAdapter(hibernateJpaVendorAdapter);
 
         lemfb.setDataSource(dataSource);
-        lemfb.setJpaPropertyMap(jpaProperties.getProperties());
+        lemfb.setJpaPropertyMap(Objects.nonNull(jpaProperties) ? jpaProperties.getProperties() : null);
 
         return lemfb;
     }
