@@ -18,6 +18,3 @@ public class JpaConfig {
         return entityManagerFactory;
     }
 }
-
-
-

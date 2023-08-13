@@ -30,8 +30,6 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.persistence.EntityManagerFactory;
 
-
-@ComponentScan
 @Configuration
 public class AppConfig {
 

@@ -1,0 +1,19 @@
+server:
+  port: 9095
+
+spring:
+
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: security_db
+      uri: mongodb://127.0.0.1:27017/security_db
+      username: security_dev
+      password: security_dev
+
+security:
+  jwt:
+    secret-key: 'liebe-ist-fuer-alle-da'
+    expiration: 1d
+    refresh-token.expiration: 30d

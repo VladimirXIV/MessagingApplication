@@ -1,0 +1,23 @@
+server:
+  port: 9095
+
+app:
+  kafka:
+    topic: g
+
+spring:
+
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: security_db
+      uri: mongodb://127.0.0.1:27017/security_db
+      username: security_dev
+      password: security_dev
+
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: 890
+    topic:

@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
 
-@Import(value = AppConfig.class)
+
 @SpringBootApplication(scanBasePackages = {
+        "just.education.user_messaging_app.config",
         "just.education.user_messaging_app.controller"
 })
 public class UserMessagingApplication {

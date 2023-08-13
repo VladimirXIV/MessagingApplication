@@ -1,0 +1,4 @@
+#!/bin/sh
+kafka-topics.sh --create --bootstrap-server kafka-1:9095 --replication-factor 1 --partitions 1 --topic test_topic_1_kafka_1
+kafka-topics.sh --create --bootstrap-server kafka-1:9095 --replication-factor 1 --partitions 1 --topic test_topic_2_kafka_1
+kafka-topics.sh --create --bootstrap-server kafka-1:9095 --replication-factor 1 --partitions 1 --topic test_topic_3_kafka_1

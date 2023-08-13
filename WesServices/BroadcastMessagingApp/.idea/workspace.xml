@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a2553883-6731-4877-93a1-09df7f41a7d9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/just/education/broadcast_messaging_app/config/KafkaConsumerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/just/education/broadcast_messaging_app/config/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/just/education/broadcast_messaging_app/model/BroadcastMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/just/education/broadcast_messaging_app/service/BroadcastMessageConsumerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/just/education/broadcast_messaging_app/service/BroadcastMessageProducerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/config/MongoConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/controller/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/dto/UserLoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/dto/UserLoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/dto/UserRegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/dto/UserRegisterResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/exception/AppException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/model/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/repository/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/security/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/service/UserPrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/util/JWTGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/databasechangelog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/version/db.changelog-1.0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/version/db.changelog-2.0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/version/db.changelog-3.0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/version/db.changelog-4.0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/version/db.changelog-5.0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Distribution/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Distribution/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Distribution/docker_databases_init.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Distribution/docker_users_init.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GroupMessagingApp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/config/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/UserMessagingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/UserMessagingApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/config/JpaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/config/JpaConfig.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-maven-3.3.9" />
+        <option name="useMavenConfig" value="false" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="1.8" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+  </component>
+  <component name="ProjectId" id="2Tn2WG4UQ1ynStJEBUrW3H4rh8S" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/v.fedotov/Projects/MessagingApplication/WesServices/BroadcastMessagingApp/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c1d0253174750a6a4b1e07b76b052a62&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="BroadcastMessagingApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="BroadcastMessagingApp" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="broadcast-messaging-app [clean,install]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2553883-6731-4877-93a1-09df7f41a7d9" name="Changes" comment="" />
+      <created>1691664554917</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691664554917</updated>
+      <workItem from="1691664556089" duration="1838000" />
+      <workItem from="1691673294747" duration="3256000" />
+      <workItem from="1691738835608" duration="41000" />
+      <workItem from="1691745782581" duration="20355000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
