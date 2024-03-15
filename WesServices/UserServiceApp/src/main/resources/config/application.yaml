@@ -1,0 +1,23 @@
+server.port: 9075
+
+---
+spring:
+
+  config:
+    activate:
+      on-profile: dev
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9085/auth/realms/baeldung
+        opaquetoken:
+          introspection-uri:
+
+---
+spring:
+
+  config:
+    activate:
+      on-profile: prod

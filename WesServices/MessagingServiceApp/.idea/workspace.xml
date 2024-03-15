@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d65c0ef8-3d8b-4aef-92c0-86b806d36bf9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/requests/auth-controller-requests.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/src/main/java/just/education/security_messaging_app/liquibase/CS10_AddUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/src/main/java/just/education/security_messaging_app/liquibase/CS7_AddAdminRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/src/main/java/just/education/security_messaging_app/liquibase/CS8_AddEditorRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/src/main/java/just/education/security_messaging_app/liquibase/CS9_AddAnalystRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/src/main/java/just/education/security_messaging_app/security/DomainUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/src/main/java/just/education/security_messaging_app/security/JwtAuthConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/src/main/resources/changelog/version/db.changelog-6.0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/src/main/resources/changelog/version/db.changelog-7.0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/src/main/resources/changelog/version/db.changelog-8.0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecurityServiceApp/src/main/resources/changelog/version/db.changelog-9.0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserServiceApp/src/main/java/just/education/user_messaging_app/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BroadcastMessagingApp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BroadcastMessagingApp/src/main/java/just/education/broadcast_messaging_app/BroadcastMessagingApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BroadcastMessagingApp/src/main/java/just/education/broadcast_messaging_app/config/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BroadcastMessagingApp/src/main/java/just/education/broadcast_messaging_app/config/KafkaConsumerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BroadcastMessagingApp/src/main/java/just/education/broadcast_messaging_app/config/KafkaProducerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BroadcastMessagingApp/src/main/java/just/education/broadcast_messaging_app/model/BroadcastMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BroadcastMessagingApp/src/main/java/just/education/broadcast_messaging_app/service/BroadcastMessageConsumerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BroadcastMessagingApp/src/main/java/just/education/broadcast_messaging_app/service/BroadcastMessageProducerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BroadcastMessagingApp/src/main/resources/config/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Distribution/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Distribution/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Distribution/mongo/mongo-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Distribution/mongo/mongo-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/requests/group-controller-requests.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/GroupMessagingApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/config/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/config/JpaConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/controller/FollowshipController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/controller/GroupController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/controller/MemberController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/controller/MessageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/controller/PostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/FollowshipCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/FollowshipReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/FollowshipUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/GroupCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/GroupReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/GroupStatusDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/GroupTypeDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/GroupUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/MemberCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/MemberReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/MemberUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/MessageCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/MessageReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/MessageUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/PostCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/PostReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/dto/PostUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/entity/Followship.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/entity/Group.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/entity/GroupRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/entity/GroupStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/entity/GroupType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/entity/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/entity/MemberStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/entity/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/entity/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/mapper/FollowshipMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/mapper/GroupMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/mapper/MemberMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/mapper/MessageMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/mapper/PostMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/repository/FollowshipRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/repository/GroupRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/repository/GroupRoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/repository/GroupStatusRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/repository/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/repository/MemberStatusRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/repository/MessageRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/repository/PostRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/service/FollowshipService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/service/GroupService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/service/MemberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/service/MessageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/service/PostService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/serviceimpl/FollowshipServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/serviceimpl/GroupServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/serviceimpl/MemberServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/serviceimpl/MessageServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/java/just/education/group_messaging_app/serviceimpl/PostServiceimpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/config/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.10__create_table_group_status.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.11__create_group_status_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.12__populate_table_group_status.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.20__create_table_group_type.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.21__create_group_type_id_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.22__populate_table_group_type.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.30__create_table_group.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.31__create_group_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.40__create_table_message.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.41__create_message_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.50__create_table_member_status.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.51__create_member_status_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.52__populate_table_member_status.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.60__create_table_group_role.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.61__create_group_role_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.62__populate_table_group_role.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.70__create_table_member.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.71__create_member_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.80__create_table_post.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.81__create_post_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.90__create_table_followship.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/dev/D1.91__create_followship_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/test/D2.10__fill_group_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/test/D2.20__fill_message_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/test/D2.30__fill_member_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/test/D2.40__fill_post_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GroupMessagingApp/src/main/resources/database/migration/test/D2.50__fill_followship_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/SecurityMessagingApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/config/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/config/MongoConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/controller/AuthenticationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/dto/UserLoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/dto/UserLoginResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/dto/UserRegisterRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/dto/UserRegisterResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/exception/AppException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/model/Permission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/model/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/repository/RoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/security/JWTAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/service/UserPrincipal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/java/just/education/security_messaging_app/util/JWTGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/databasechangelog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/version/db.changelog-1.0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/version/db.changelog-2.0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/version/db.changelog-3.0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/version/db.changelog-4.0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/changelog/version/db.changelog-5.0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityMessagingApp/src/main/resources/config/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/requests/followship-controller-requests.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/requests/friendship-controller-requests.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/requests/message-controller-requests.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/requests/post-controller-requests.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/requests/user-controller-requests.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/UserMessagingApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/config/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/config/JpaConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/controller/FollowshipController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/controller/FriendshipController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/controller/MessageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/controller/PostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/FollowshipCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/FollowshipReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/FollowshipTypeReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/FollowshipUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/FriendshipCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/FriendshipReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/FriendshipStatusReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/FriendshipTypeReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/FriendshipUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/MessageCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/MessageReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/MessageUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/PostCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/PostReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/PostUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/UserCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/UserReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/dto/UserUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/entity/Followship.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/entity/FollowshipType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/entity/Friendship.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/entity/FriendshipStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/entity/FriendshipType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/entity/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/entity/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/mapper/FollowshipMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/mapper/FriendshipMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/mapper/MessageMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/mapper/PostMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/repository/FollowshipRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/repository/FriendshipRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/repository/MessageRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/repository/PostRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/service/FollowshipService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/service/FriendshipService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/service/MessageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/service/PostService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/serviceimpl/FollowshipServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/serviceimpl/FriendshipServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/serviceimpl/MessageServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/serviceimpl/PostServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/java/just/education/user_messaging_app/serviceimpl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/config/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.20__create_table_user.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.21__create_user_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.30__create_table_post.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.31__create_post_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.40__create_table_message.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.41__create_message_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.50__create_table_friendship_type.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.51__create_friendship_type_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.52__populate_table_friendship_type.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.60__create_table_friendship_status.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.61__create_friendship_status_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.62__populate_table_friendship_status.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.70__create_table_friendship.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.71__create_friendship_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.80__create_table_followship_type.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.81__create_followship_type_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.82__populate_table_followship_type.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.90__create_table_followship.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/dev/D1.91__create_followship_sequence.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/test/D2.10__fill_user_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/test/D2.20__fill_post_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/test/D2.30__fill_message_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/test/D2.40__fill_friendship_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserMessagingApp/src/main/resources/database/migration/test/D2.50__fill_followship_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../database.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../../database.drawio" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-maven-3.9.4" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ZP7eedF3yqpwuUmUGcUhRkjME4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ConvoMessagingApplicationTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ConvoMessagingApplicationTest.sendMessage.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.convo-messaging-app [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.convo-messaging-app [dependency:tree...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.convo-messaging-app [idea:idea].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ConvoMessagingApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/v.fedotov/Projects/MessagingApplication/WesServices/MessagingServiceApp/src/test/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Maven.convo-messaging-app [clean,install]">
+    <configuration name="ConvoMessagingApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="convo-messaging-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="just.education.convo_messaging_app.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="just.education.convo_messaging_app.test" />
+      <option name="MAIN_CLASS_NAME" value="just.education.convo_messaging_app.test.ConvoMessagingApplicationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConvoMessagingApplicationTest.sendMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="convo-messaging-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="just.education.convo_messaging_app.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="just.education.convo_messaging_app.test" />
+      <option name="MAIN_CLASS_NAME" value="just.education.convo_messaging_app.test.ConvoMessagingApplicationTest" />
+      <option name="METHOD_NAME" value="sendMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="convo-messaging-app [clean,install]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2" />
+    </configuration>
+    <configuration name="convo-messaging-app [dependency:tree...]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="dependency:tree" />
+                <option value="-Dverbose" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConvoMessagingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="convo-messaging-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="just.education.convo_messaging_app.ConvoMessagingApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="just.education.convo_messaging_app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose" />
+      <item itemvalue="JUnit.ConvoMessagingApplicationTest" />
+      <item itemvalue="JUnit.ConvoMessagingApplicationTest.sendMessage" />
+      <item itemvalue="Maven.convo-messaging-app [clean,install]" />
+      <item itemvalue="Maven.convo-messaging-app [dependency:tree...]" />
+      <item itemvalue="Spring Boot.ConvoMessagingApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ConvoMessagingApplicationTest" />
+        <item itemvalue="JUnit.ConvoMessagingApplicationTest.sendMessage" />
+        <item itemvalue="Spring Boot.ConvoMessagingApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-temurin-21.0.1-4caba194b151-2332dc18" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d65c0ef8-3d8b-4aef-92c0-86b806d36bf9" name="Changes" comment="" />
+      <created>1702311956975</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702311956975</updated>
+      <workItem from="1702311961144" duration="6520000" />
+      <workItem from="1702382985795" duration="11937000" />
+      <workItem from="1702402664512" duration="4281000" />
+      <workItem from="1702453410786" duration="7628000" />
+      <workItem from="1702464022098" duration="1519000" />
+      <workItem from="1702465636292" duration="9552000" />
+      <workItem from="1702497926381" duration="3032000" />
+      <workItem from="1702537951323" duration="6000" />
+      <workItem from="1702563861236" duration="1534000" />
+      <workItem from="1702565621140" duration="14240000" />
+      <workItem from="1702628280490" duration="4772000" />
+      <workItem from="1702634706869" duration="7731000" />
+      <workItem from="1702651923273" duration="7935000" />
+      <workItem from="1702662613392" duration="2432000" />
+      <workItem from="1702666042456" duration="339000" />
+      <workItem from="1702888355392" duration="1545000" />
+      <workItem from="1702897256072" duration="3611000" />
+      <workItem from="1702909539230" duration="14562000" />
+      <workItem from="1702978660631" duration="6000" />
+      <workItem from="1702987544101" duration="18000" />
+      <workItem from="1703190386963" duration="625000" />
+      <workItem from="1703245717626" duration="1229000" />
+      <workItem from="1703956190096" duration="164000" />
+      <workItem from="1705084463534" duration="988000" />
+      <workItem from="1705338838616" duration="27000" />
+      <workItem from="1706120523784" duration="610000" />
+      <workItem from="1706198881033" duration="604000" />
+      <workItem from="1706258572366" duration="10000" />
+      <workItem from="1706260201101" duration="4000" />
+      <workItem from="1707689339728" duration="598000" />
+      <workItem from="1707727672946" duration="124000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/just/education/convo_messaging_app/handler/ConvoMessageWebSocketHandler.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/just/education/convo_messaging_app/handler/ConvoMessageWebSocketHandler.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/just/education/convo_messaging_app/handler/ConvoMessageWebSocketHandler.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/just/education/convo_messaging_app/handler/ConvoMessageWebSocketHandler.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/just/education/convo_messaging_app/handler/ConvoMessageWebSocketHandler.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.springframework.data.redis.core.RedisTemplate" memberName="geoOps" />
+        <PinnedItemInfo parentTag="org.springframework.data.redis.core.RedisTemplate" memberName="streamOps" />
+        <PinnedItemInfo parentTag="org.springframework.data.redis.core.RedisTemplate" memberName="setOps" />
+        <PinnedItemInfo parentTag="org.springframework.data.redis.core.RedisTemplate" memberName="defaultSerializer" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="((JedisConnectionFactory)this.sessionDataService.sessionDataCache.redisTemplate.connectionFactory).pool" custom="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

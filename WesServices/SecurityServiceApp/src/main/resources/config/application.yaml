@@ -1,0 +1,26 @@
+server:
+  port: 9085
+  servlet:
+    context-path: /security
+
+spring:
+
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: security_db_main
+      uri: mongodb://127.0.0.1:27017/security_db_main
+      username: security_dev_main_user
+      password: security_dev_main_password
+      uuid-representation: standard
+
+application:
+  security:
+    jwt:
+      access-token:
+        secret-key: 14April199014April199014April199014April199014April199014April199014April199014April199014April1990
+        expiration: 600000  # 10 min
+      refresh-token:
+        secret-key: 0991lirpA410991lirpA410991lirpA410991lirpA410991lirpA410991lirpA410991lirpA410991lirpA410991lirpA41
+        expiration: 86400000 # 1 day

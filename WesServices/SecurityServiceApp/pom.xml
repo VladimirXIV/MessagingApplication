@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>just.education</groupId>
+    <artifactId>security-messaging-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <description>security-messaging-app</description>
+
+    <properties>
+        <java.version>21.0.1</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <groovy-all.version>3.0.17</groovy-all.version>
+        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <mapstruct-processor.version>1.4.2.Final</mapstruct-processor.version>
+
+        <jjwt-api.version>0.12.3</jjwt-api.version>
+
+        <liquibase-core.version>4.23.0</liquibase-core.version>
+        <liquibase-mongodb.version>4.23.0</liquibase-mongodb.version>
+        <liquibase-maven-plugin.version>4.23.0</liquibase-maven-plugin.version>
+
+        <mongodb-driver-core.version>4.10.2</mongodb-driver-core.version>
+        <mongodb-driver-sync.version>4.10.2</mongodb-driver-sync.version>
+        <bson.version>4.10.2</bson.version>
+
+        <spring-boot.version>3.2.0</spring-boot.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>dev-environment-liquibase</id>
+            <properties>
+                <database.driver>liquibase.ext.mongodb.database.MongoClientDriver</database.driver>
+                <database.url>mongodb://localhost:27017/security_db_main</database.url>
+                <database.username>security_dev_main_user</database.username>
+                <database.password>security_dev_main_password</database.password>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>${liquibase-maven-plugin.version}</version>
+                <configuration>
+                    <changeLogFile>src/main/resources/changelog/databasechangelog.xml</changeLogFile>
+                    <driver>${database.driver}</driver>
+                    <url>${database.url}</url>
+                    <username>${database.username}</username>
+                    <password>${database.password}</password>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${mapstruct-processor.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>${jjwt-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>${jjwt-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>${jjwt-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.16.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.16.1</version>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>${liquibase-core.version}</version>
+            <exclusions>
+                <exclusion>
+                        <groupId>org.yaml</groupId>
+                        <artifactId>snakeyaml</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>bson</artifactId>
+            <version>4.11.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.liquibase.ext</groupId>
+            <artifactId>liquibase-mongodb</artifactId>
+            <version>${liquibase-mongodb.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-core</artifactId>
+            <version>${mongodb-driver-core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>${mongodb-driver-sync.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-authorization-server</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

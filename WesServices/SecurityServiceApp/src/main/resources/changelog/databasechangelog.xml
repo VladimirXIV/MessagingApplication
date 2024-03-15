@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="databasechangelog.xml"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:mongodb="http://www.liquibase.org/xml/ns/mongodb"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                                       http://www.liquibase.org/xml/ns/mongodb
+                                       http://www.liquibase.org/xml/ns/mongodb/liquibase-mongodb-latest.xsd">
+
+    <include file="version/db.changelog-1.0.xml" relativeToChangelogFile="true"/>
+    <include file="version/db.changelog-2.0.xml" relativeToChangelogFile="true"/>
+<!--<include file="version/db.changelog-3.0.xml" relativeToChangelogFile="true"/>-->
+    <include file="version/db.changelog-4.0.xml" relativeToChangelogFile="true"/>
+<!--<include file="version/db.changelog-5.0.xml" relativeToChangelogFile="true"/>-->
+    <include file="version/db.changelog-6.0.xml" relativeToChangelogFile="true"/>
+    <include file="version/db.changelog-7.0.xml" relativeToChangelogFile="true"/>
+    <include file="version/db.changelog-8.0.xml" relativeToChangelogFile="true"/>
+    <include file="version/db.changelog-9.0.xml" relativeToChangelogFile="true"/>
+    <include file="version/db.changelog-10.0.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

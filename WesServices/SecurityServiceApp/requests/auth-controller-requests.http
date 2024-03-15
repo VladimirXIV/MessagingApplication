@@ -1,0 +1,31 @@
+### create user
+POST  http://localhost:9085/security/api/auth/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "Lorenz",
+  "email": "lorenz1968@ls.com",
+  "password": "lorenzbitter"
+}
+
+### login user
+POST  http://localhost:9085/security/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "Lorenz",
+  "password": "lorenzbitter"
+}
+
+### secured
+GET  http://localhost:9085/security/test/secured
+Accept: application/json
+Content-Type: application/json
+
+
+### unsecured
+GET localhost:9085/security/test/unsecured
+Accept: application/json
+Content-Type: application/json

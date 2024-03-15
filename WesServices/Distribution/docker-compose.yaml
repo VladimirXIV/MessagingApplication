@@ -33,10 +33,11 @@ services:
     restart: unless-stopped
 
   mongo:
+    container_name: mongo_container
     image: mongo:latest
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: rootUserk
+      MONGO_INITDB_ROOT_USERNAME: rootUser
       MONGO_INITDB_ROOT_PASSWORD: rootPassword
     volumes:
       - "./mongo/mongo-init.js:/docker-entrypoint-initdb.d/1-mongo-init.js"
@@ -44,13 +45,34 @@ services:
       - "27017:27017"
 
   mongo-express:
+    container_name: mongo-express_container
     image: mongo-express:latest
     restart: always
     ports:
       - 8081:8081
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+      ME_CONFIG_MONGODB_SERVER: mongo_container
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: true
+      ME_CONFIG_MONGODB_ADMINUSERNAME: rootUser
+      ME_CONFIG_MONGODB_ADMINPASSWORD: rootPassword
+      ME_CONFIG_MONGODB_AUTH_USERNAME: rootUser
+      ME_CONFIG_MONGODB_AUTH_PASSWORD: rootPassword
+
+  redis:
+    container_name: redis_container
+    image: redis
+    restart: always
+    volumes:
+    - "./redis.conf:/usr/local/etc/redis/redis.conf"
+    ports:
+      - "6379:6379"
+    
+  redis-insight:
+    container_name: redis-insight_container
+    image: redislabs/redisinsight
+    restart: always
+    ports:
+      - "8001:8001"
 
   zookeeper:
     image: zookeeper
@@ -126,6 +148,7 @@ services:
       KAFKA_CFG_ZOOKEEPER_CONNECTION_TIMEOUT_MS: 6000
 
   kafka-init:
+    container_name: kafka-init_container
     image: bitnami/kafka
     depends_on:
       kafka-1:
@@ -144,6 +167,7 @@ services:
       && /docker-entrypoint-initdb.d/kafka3-custom-init"
 
   kafka-ui:
+    container_name: kafka-ui_container
     image: provectuslabs/kafka-ui
     ports:
       - "8070:8070"
