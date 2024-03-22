@@ -25,7 +25,7 @@ public class DomainUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         Optional<User> userOpt = this.userRepository.findByUsername(username);
-        if (!userOpt.isPresent()) {
+        if (userOpt.isEmpty()) {
             throw new UsernameNotFoundException("Could not find user");
         }
 

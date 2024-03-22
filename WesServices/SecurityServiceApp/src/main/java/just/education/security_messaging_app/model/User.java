@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-import org.bson.types.Binary;
 import org.springframework.data.annotation.Id;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -27,6 +26,8 @@ public class User {
     private Set<Role> roles;
     @DBRef
     private RefreshToken refreshToken;
+    @DBRef
+    private AccessToken accessToken;
 
     public User() {
         this.roles = new HashSet<>();
